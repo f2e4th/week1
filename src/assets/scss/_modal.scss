@@ -1,0 +1,6 @@
+.modal {
+  background: black;
+  &.modal-danger {
+    background: red;
+  }
+}
