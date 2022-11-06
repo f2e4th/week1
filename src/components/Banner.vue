@@ -18,11 +18,18 @@ export default {
             const timeline = gsap.timeline();
             console.log(timeline);
             timeline.to('.banner-title', {
-                top: "11rem",
+                top: returnTitlePositionY(),
                 duration: 0.3,
                 delay: 0.3
             })
             console.log('跑動畫');
+        }
+        const returnTitlePositionY = ()=>{
+            var backHeight = document.querySelector('.banner-svg--back').offsetHeight;
+            var frontHeight = document.querySelector('.banner-svg--front').offsetHeight
+            var titleHeight = document.querySelector('.banner-title').offsetHeight
+            console.log(backHeight-frontHeight);
+            return backHeight-frontHeight-titleHeight - 20;
         }
     }
 
@@ -35,8 +42,10 @@ export default {
     @apply relative h-screen w-full;
 }
 .banner-title {
-    @apply absolute z-10 w-full top-60;
+    @apply absolute z-10 w-full bottom-0;
+    // top-60
     // 會出現的位置 top-44 (11rem) 176px
+    // top: 15rem;
 }
 .banner-svg {
     @apply w-full left-0 absolute;
