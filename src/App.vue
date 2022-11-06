@@ -12,4 +12,7 @@ import Homepage from './pages/Homepage.vue'
 
 <style lang="scss">
 @import './assets/scss/all.scss';
+#app{
+  @apply w-full;
+}
 </style>
