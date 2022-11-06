@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="title">This is Homepage.</h1>
+    <Banner/>
   </div>
 </template>
 
@@ -10,10 +10,13 @@
 }
 </style>
 <script>
+import Banner from '../components/Banner.vue';
 export default{
   setup() {
     
   },
+  components: {
+    Banner
+  }
 }
 </script>
-
