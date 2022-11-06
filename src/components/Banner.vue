@@ -7,7 +7,18 @@
 </template>
 
 <script>
+import {ref, reactive, onMounted} from "vue";
+import gsap from "gsap";
 export default {
+    setup(){
+        onMounted( ()=>{
+            gsapInit();
+        })
+        const gsapInit = ()=>{
+            const timeline = gsap.timeline();
+            console.log(timeline);
+        }
+    }
 
 
 }
