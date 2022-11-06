@@ -1,20 +1,27 @@
 <template>
   <div id="Banner">
-    <h1 class="banner-title">The F2E 4TH</h1>
-    <div class="banner-svg banner-svg--back"></div>
+    <h1 class="banner-title">The F2E 4TH </h1>
+    <div class="banner-svg banner-svg--back">
+        <svg class="w-full h-full">
+            <circle cx="50" cy="50" r="50" class="svg-circle svg-circle--1"></circle>
+            <circle cx="50" cy="50" r="60" class="svg-circle svg-circle--2"></circle>
+            <circle cx="50" cy="50" r="70" class="svg-circle svg-circle--3"></circle>
+            <circle cx="50" cy="50" r="80" class="svg-circle svg-circle--4"></circle>
+        </svg>
+    </div>
     <div class="banner-svg banner-svg--front"></div>
   </div>
 </template>
 
 <script>
-import {ref, reactive, onMounted} from "vue";
+import {ref, reactive, onMounted, computed} from "vue";
 import gsap from "gsap";
 export default {
     setup(){
         onMounted( ()=>{
             gsapInit();
         })
-        const gsapInit = ()=>{
+        function gsapInit(){
             const timeline = gsap.timeline();
             console.log(timeline);
             timeline.to('.banner-title', {
@@ -22,14 +29,18 @@ export default {
                 duration: 0.3,
                 delay: 0.3
             })
+            // 後面接改svg fill
             console.log('跑動畫');
         }
-        const returnTitlePositionY = ()=>{
+        function returnTitlePositionY (){
             var backHeight = document.querySelector('.banner-svg--back').offsetHeight;
             var frontHeight = document.querySelector('.banner-svg--front').offsetHeight
             var titleHeight = document.querySelector('.banner-title').offsetHeight
             console.log(backHeight-frontHeight);
             return backHeight-frontHeight-titleHeight - 20;
+        }
+        function getCircyleY(){
+            return (window.innerWidth - 16)/2
         }
     }
 
@@ -57,6 +68,13 @@ export default {
     &--back {
         @apply h-full top-0;
         background: rgb(128, 128, 211);
+    }
+}
+.svg-circle {
+    @apply w-full h-full;
+    fill: black;
+    &:nth-child(odd){
+        fill: white;
     }
 }
 </style>
