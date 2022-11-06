@@ -17,6 +17,12 @@ export default {
         const gsapInit = ()=>{
             const timeline = gsap.timeline();
             console.log(timeline);
+            timeline.to('.banner-title', {
+                top: "11rem",
+                duration: 0.3,
+                delay: 0.3
+            })
+            console.log('跑動畫');
         }
     }
 
@@ -29,7 +35,8 @@ export default {
     @apply relative h-screen w-full;
 }
 .banner-title {
-    @apply absolute z-10 w-full top-44;
+    @apply absolute z-10 w-full top-60;
+    // 會出現的位置 top-44 (11rem) 176px
 }
 .banner-svg {
     @apply w-full left-0 absolute;
