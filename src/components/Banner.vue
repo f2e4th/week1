@@ -43,8 +43,9 @@ export default {
             console.log(timeline);
             timeline.to('.banner-title', {
                 top: 100 ,
-                duration: 0.3,
-                delay: 0.3
+                duration: 0.5,
+                delay: 0.5,
+                opacity: 1
             })
             // 後面接改svg fill
             console.log('跑動畫');
@@ -93,6 +94,8 @@ export default {
     font-weight: 500;
     font-size: 72px;
     line-height: 104px;
+    text-shadow: 0 0.1em #333;
+    opacity: 0;
 }
 .banner-svg {
     @apply w-full;
