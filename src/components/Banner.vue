@@ -1,7 +1,7 @@
 <template>
   <div id="Banner">
-    <h1 class="banner-title">The F2E 4TH {{circyleY}}</h1>
-    <div class="banner-svg banner-svg--back">
+      <div class="banner-svg banner-svg--back">
+        <h1 class="banner-title">The F2E 4TH {{circyleY}}</h1>
         <svg class="svg-back" width="772" height="772" viewBox="0 0 772 772" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle id="moonSvg" class="z-10" cx="386" cy="386" r="386" fill="#182E43"/>
             <circle cx="386" cy="386" r="343" fill="#2C4255"/>
@@ -9,14 +9,14 @@
             <circle cx="386" cy="386" r="257" fill="#EEF0F1"/>
         </svg>
         <img id="starSvg" :src="starSvg" alt="star">
-        <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleSvgStyle+'px'}" alt="people">
+        <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleLeft+'px'}" alt="people">
         <img :src="treeSvg" id="treeSvg" alt="tree">
     </div>
   </div>
 </template>
 
 <script>
-import {ref, reactive, onMounted, computed} from "vue";
+import {ref, reactive, onMounted, computed, watch} from "vue";
 import gsap from "gsap";
 import treeSvg from '../assets/svg/img_tree_blue_big.svg'
 import starSvg from '../assets/svg/img_star_blue_big.png'
@@ -26,9 +26,12 @@ export default {
     setup(){
         onMounted( ()=>{
             gsapInit();
+            updataLeft();
+            resize();
             // getCircyleY();
         })
         const circyleY =  ref('0');
+        const peopleLeft = ref(0)
         function gsapInit(){
             const timeline = gsap.timeline();
             console.log(timeline);
@@ -47,6 +50,11 @@ export default {
             console.log(backHeight);
             return backHeight-titleHeight - 20;
         }
+        function resize(){
+            window.addEventListener('resize', (event) => {
+                updataLeft();
+            });
+        }
         function getCircyleY(){
             // return (window.innerWidth - 16)/2
             var circyle1 = document.querySelector('.svg-circle--1').attributes[2]
@@ -63,8 +71,14 @@ export default {
                 return left;
             }
         })
-        return {circyleY, treeSvg, starSvg, peopleSvg, peopleSvgStyle}
-    }
+        function updataLeft(){
+            peopleLeft.value = (window.innerWidth)/2
+        }
+        watch ( window.innerWidth, ()=>{
+            updataLeft();
+        })
+        return {circyleY, treeSvg, starSvg, peopleSvg, peopleSvgStyle, peopleLeft}
+    },
 
 
 }
