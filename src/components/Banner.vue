@@ -2,25 +2,31 @@
   <div id="Banner">
     <h1 class="banner-title">The F2E 4TH {{circyleY}}</h1>
     <div class="banner-svg banner-svg--back">
-        <svg class="w-full h-full">
-            <circle cx="439" cy="100" r="80" class="svg-circle svg-circle--1"></circle>
-            <circle cx="439" cy="100" r="70" class="svg-circle svg-circle--2"></circle>
-            <circle cx="439" cy="100" r="60" class="svg-circle svg-circle--3"></circle>
-            <circle cx="439" cy="100" r="50" class="svg-circle svg-circle--4"></circle>
+        <svg class="svg-back" width="772" height="772" viewBox="0 0 772 772" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle id="moonSvg" class="z-10" cx="386" cy="386" r="386" fill="#182E43"/>
+            <circle cx="386" cy="386" r="343" fill="#2C4255"/>
+            <circle cx="386" cy="386" r="300" fill="#637180"/>
+            <circle cx="386" cy="386" r="257" fill="#EEF0F1"/>
         </svg>
+        <img id="starSvg" :src="starSvg" alt="star">
+        <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleSvgStyle+'px'}" alt="people">
+        <img :src="treeSvg" id="treeSvg" alt="tree">
     </div>
-    <div class="banner-svg banner-svg--front"></div>
   </div>
 </template>
 
 <script>
 import {ref, reactive, onMounted, computed} from "vue";
 import gsap from "gsap";
+import treeSvg from '../assets/svg/img_tree_blue_big.svg'
+import starSvg from '../assets/svg/img_star_blue_big.png'
+import peopleSvg from '../assets/svg/img_RD&UI_big.svg'
+
 export default {
     setup(){
         onMounted( ()=>{
             gsapInit();
-            getCircyleY();
+            // getCircyleY();
         })
         const circyleY =  ref('0');
         function gsapInit(){
@@ -51,7 +57,13 @@ export default {
             console.log(typeof circyle1, circyle2, circyle3, circyle4)
             circyleY.value = (window.innerWidth - 32)/2;
         }
-        return {circyleY}
+        const peopleSvgStyle = computed({
+            get: () => {
+                var left = (window.innerWidth)/2;
+                return left;
+            }
+        })
+        return {circyleY, treeSvg, starSvg, peopleSvg, peopleSvgStyle}
     }
 
 
@@ -60,7 +72,8 @@ export default {
 
 <style scope lang='scss'>
 #Banner {
-    @apply relative h-screen w-full;
+    @apply relative  w-full;
+    height: 1024px;
 }
 .banner-title {
     @apply absolute z-10 w-full bottom-0;
@@ -69,15 +82,12 @@ export default {
     // top: 15rem;
 }
 .banner-svg {
-    @apply w-full left-0 absolute;
-    &--front {
-        @apply bottom-0 z-20;
-        background: rgb(209, 114, 114);
-        height: 60%;
-    }
+    @apply w-full;
     &--back {
-        @apply h-full top-0;
-        background: rgb(128, 128, 211);
+        @apply h-full relative;
+        // background: rgb(128, 128, 211);
+        background: #061C31;
+
     }
 }
 .svg-circle {
@@ -86,5 +96,18 @@ export default {
     &:nth-child(odd){
         fill: white;
     }
+}
+.svg-back{
+    @apply mx-auto my-0;
+}
+#starSvg {
+    @apply absolute top-0;
+}
+#treeSvg {
+    @apply absolute top-0;
+}
+#peopleSvg {
+    @apply absolute bottom-96;
+    transform: translateX(-50%);
 }
 </style>
