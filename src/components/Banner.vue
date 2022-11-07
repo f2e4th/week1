@@ -1,9 +1,12 @@
 <template>
   <div id="Banner">
       <div class="banner-svg banner-svg--back">
-        <h1 class="banner-title">The F2E 4TH {{circyleY}}</h1>
-        <svg class="svg-back" width="772" height="772" viewBox="0 0 772 772" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle id="moonSvg" class="z-10" cx="386" cy="386" r="386" fill="#182E43"/>
+        <div class="banner-title">
+            <h1>The F2E 4TH</h1>
+            <h2 class="sub-title">互動式網頁設計</h2>
+        </div>
+        <svg id="moonSvg" class="svg-back" width="772" height="772" viewBox="0 0 772 772" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle  class="z-10" cx="386" cy="386" r="386" fill="#182E43"/>
             <circle cx="386" cy="386" r="343" fill="#2C4255"/>
             <circle cx="386" cy="386" r="300" fill="#637180"/>
             <circle cx="386" cy="386" r="257" fill="#EEF0F1"/>
@@ -28,15 +31,18 @@ export default {
             gsapInit();
             updataLeft();
             resize();
-            // getCircyleY();
         })
+
+
         const circyleY =  ref('0');
         const peopleLeft = ref(0)
+
+// methods
         function gsapInit(){
             const timeline = gsap.timeline();
             console.log(timeline);
             timeline.to('.banner-title', {
-                top: returnTitlePositionY(),
+                top: 100 ,
                 duration: 0.3,
                 delay: 0.3
             })
@@ -55,29 +61,17 @@ export default {
                 updataLeft();
             });
         }
-        function getCircyleY(){
-            // return (window.innerWidth - 16)/2
-            var circyle1 = document.querySelector('.svg-circle--1').attributes[2]
-            var circyle2 = document.querySelector('.svg-circle--2').attributes[2]
-            var circyle3 = document.querySelector('.svg-circle--3').attributes[2]
-            var circyle4 = document.querySelector('.svg-circle--4').attributes[2]
-
-            console.log(typeof circyle1, circyle2, circyle3, circyle4)
-            circyleY.value = (window.innerWidth - 32)/2;
-        }
-        const peopleSvgStyle = computed({
-            get: () => {
-                var left = (window.innerWidth)/2;
-                return left;
-            }
-        })
         function updataLeft(){
-            peopleLeft.value = (window.innerWidth)/2
+            if((window.innerWidth > 1024)){
+                peopleLeft.value = 512
+            } else {
+                peopleLeft.value = (window.innerWidth)/2
+            }
         }
         watch ( window.innerWidth, ()=>{
             updataLeft();
         })
-        return {circyleY, treeSvg, starSvg, peopleSvg, peopleSvgStyle, peopleLeft}
+        return {circyleY, treeSvg, starSvg, peopleSvg, peopleLeft}
     },
 
 
@@ -86,14 +80,19 @@ export default {
 
 <style scope lang='scss'>
 #Banner {
-    @apply relative  w-full;
+    @apply relative  w-full mx-auto my-0;
+    max-width: 1024px;
     height: 1024px;
+    // max-width: 1024px;
+    // @media screen and (min-width:768px) {
+    //     max-width: 414px;
+    // }
 }
 .banner-title {
     @apply absolute z-10 w-full bottom-0;
-    // top-60
-    // 會出現的位置 top-44 (11rem) 176px
-    // top: 15rem;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 104px;
 }
 .banner-svg {
     @apply w-full;
@@ -115,14 +114,22 @@ export default {
     @apply mx-auto my-0;
 }
 #starSvg {
-    @apply absolute top-0;
+    @apply absolute top-0 w-full;
 }
 #treeSvg {
-    @apply absolute top-0;
+    @apply absolute top-0 z-10; 
     min-width: 768px;
 }
 #peopleSvg {
     @apply absolute bottom-96;
     transform: translateX(-50%);
+}
+#moonSvg{
+    width: 50%;
+    transform: translateY(50px);
+}
+.sub-title {
+    font-size: 40px;
+    line-height: 57px;
 }
 </style>
