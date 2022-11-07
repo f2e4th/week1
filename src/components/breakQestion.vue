@@ -1,14 +1,9 @@
 <template>
-    <div class="container_break w-full flex justify-center items-center start">
-        <div class="warrior"><img src="../assets/images/img_UIRD_big.png"/></div>
-        <div class="allCenter">
-            <div class="relative">
-                <img class="absolute z-0 breakquestion_bg top-0" src="../assets/images/breakquestion_bg.png" />
-                <img class="absolute z-10 castle top-0" src="../assets/images/castle.png" />
-            </div>
-        </div>
-        <!-- <div class="castle"><img src="../assets/images/castle.png" /></div> -->
-        <div class="badGuy"><img src="../assets/images/img_enemy_big.png" /></div>
+    <div class="container_break w-full flex justify-center items-center start">  
+      <div class="warrior z-30"><img class="warrior_inner" src="../assets/images/img_UIRD_big.png"/></div>
+        <div class="break_title w-9 text-7xl text-white z-30 font-extrabold">互動式網頁設計</div>
+        <div class="allCenter"><img class="breakquestion_bg" src="../assets/images/img_bg_big.png" /></div>
+        <div class="badGuy z-30"><img src="../assets/images/img_enemy_big.png" /></div>
     </div>
 </template>
 
@@ -20,16 +15,19 @@ export default {
 data() {},
 mounted(){
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    
+    ScrollTrigger.matchMedia({
+  "(max-width: 768px)": () => {
     gsap.fromTo('.badGuy', {
-      x: 0,
-      y: 55,
+      x: -270,
+      y: 500,
       opacity: 0,
       visibility: 'hidden',
     },
     {
       rotation: 0,
-      x: -150,
-      y: 55,
+      x: -300,
+      y: 500,
       duration: 1,
       delay: 1,
       opacity: 1,
@@ -41,15 +39,15 @@ mounted(){
     });
 
     gsap.fromTo('.warrior', {
-      x: 0,
-      y: -20,
+      x: 200,
+      y: 200,
       opacity: 0,
       visibility: 'hidden',
     },
     {
       rotation: 0,
-      x: 150,
-      y: -20,
+      x: 270,
+      y: 200,
       duration: 1,
       delay: 2,
       opacity: 1,
@@ -59,6 +57,69 @@ mounted(){
         toggleActions: 'play pause resume reset',
       },
     });
+   },
+  // 我都執行
+  "all": () => {
+    gsap.fromTo('.break_title', {
+      x: 450,
+      y: 10,
+      opacity: 0,
+      visibility: 'hidden',
+    },
+    {
+      rotation: 0,
+      x: 450,
+      y: 20,
+      duration: 1,
+      delay: 1,
+      opacity: 1,
+      visibility: 'visible',
+      scrollTrigger: {
+        trigger: '.start',
+        toggleActions: 'play pause resume reset',
+      },
+    });
+    gsap.fromTo('.badGuy', {
+      x: -300,
+      y: 150,
+      opacity: 0,
+      visibility: 'hidden',
+    },
+    {
+      rotation: 0,
+      x: -350,
+      y: 150,
+      duration: 1,
+      delay: 2,
+      opacity: 1,
+      visibility: 'visible',
+      scrollTrigger: {
+        trigger: '.start',
+        toggleActions: 'play pause resume reset',
+      },
+    });
+
+    gsap.fromTo('.warrior', {
+      x: 300,
+      y: -100,
+      opacity: 0,
+      visibility: 'hidden',
+    },
+    {
+      rotation: 0,
+      x: 350,
+      y: -100,
+      duration: 1,
+      delay: 3,
+      opacity: 1,
+      visibility: 'visible',
+      scrollTrigger: {
+        trigger: '.start',
+        toggleActions: 'play pause resume reset',
+      },
+    });
+   },
+});
 
 },
 }

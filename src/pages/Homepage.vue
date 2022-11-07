@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <h1 class="title">This is Homepage.</h1>
+    <!-- <h1 class="title">This is Homepage.</h1> -->
     <breakQuestion/>
   </div>
 </template>
