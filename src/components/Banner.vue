@@ -6,10 +6,10 @@
             <h2 class="sub-title">互動式網頁設計</h2>
         </div>
         <svg id="moonSvg" class="svg-back" width="772" height="772" viewBox="0 0 772 772" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle  class="z-10" cx="386" cy="386" r="386" fill="#182E43"/>
-            <circle cx="386" cy="386" r="343" fill="#2C4255"/>
-            <circle cx="386" cy="386" r="300" fill="#637180"/>
-            <circle cx="386" cy="386" r="257" fill="#EEF0F1"/>
+            <circle class="z-10 circle-4" cx="386" cy="386" r="386" fill="#182E43"/>
+            <circle class="circle-3" cx="386" cy="386" r="343" fill="#2C4255"/>
+            <circle class="circle-2" cx="386" cy="386" r="300" fill="#637180"/>
+            <circle class="circle-1" cx="386" cy="386" r="257" fill="#EEF0F1"/>
         </svg>
         <img id="starSvg" :src="starSvg" alt="star">
         <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleLeft+'px'}" alt="people">
@@ -47,8 +47,39 @@ export default {
                 delay: 0.5,
                 opacity: 1
             })
+            timeline.to('.circle-1',{
+                fill: '#FFDC9A',
+                duration: 0.2
+            })
+            timeline.to('.circle-2',{
+                fill: '#FFB21E',
+                duration: 0.2
+            })
+            timeline.to('.circle-3',{
+                fill: '#EB7F1D',
+                duration: 0.2
+            })
+            timeline.to('.circle-4',{
+                fill: '#9C411C',
+                duration: 0.2
+            })
+            timeline.to('#starSvg', {
+                fill: '#FFDC9A',
+                duration: 0.2
+            })
+            timeline.to('#treeSvg', {
+                fill: '#1F0812',
+                duration: 0.2
+            })
             // 後面接改svg fill
             console.log('跑動畫');
+
+            // FFDC9A
+            // FFB21E
+            // EB7F1D
+            // 9C411C
+            // 1F0812
+
         }
         function returnTitlePositionY (){
             var backHeight = document.querySelector('.banner-svg--back').offsetHeight;
