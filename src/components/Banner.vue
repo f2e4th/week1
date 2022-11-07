@@ -42,10 +42,10 @@ export default {
         }
         function returnTitlePositionY (){
             var backHeight = document.querySelector('.banner-svg--back').offsetHeight;
-            var frontHeight = document.querySelector('.banner-svg--front').offsetHeight
+            // var frontHeight = document.querySelector('.banner-svg--front').offsetHeight
             var titleHeight = document.querySelector('.banner-title').offsetHeight
-            console.log(backHeight-frontHeight);
-            return backHeight-frontHeight-titleHeight - 20;
+            console.log(backHeight);
+            return backHeight-titleHeight - 20;
         }
         function getCircyleY(){
             // return (window.innerWidth - 16)/2
@@ -105,6 +105,7 @@ export default {
 }
 #treeSvg {
     @apply absolute top-0;
+    min-width: 768px;
 }
 #peopleSvg {
     @apply absolute bottom-96;
