@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="w-full">
     <h1 class="title">This is Homepage.</h1>
+    <breakQuestion/>
   </div>
 </template>
 
@@ -10,7 +11,11 @@
 }
 </style>
 <script>
+import breakQuestion from '../components/breakQestion.vue';
 export default{
+  components:{
+    breakQuestion
+  },
   setup() {
     
   },
