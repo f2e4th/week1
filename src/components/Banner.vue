@@ -1,6 +1,6 @@
 <template>
   <div id="Banner">
-    <h1 class="banner-title">The F2E 4TH </h1>
+    <h1 class="banner-title">The F2E 4TH {{circyleY}}</h1>
     <div class="banner-svg banner-svg--back">
         <svg class="w-full h-full">
             <circle cx="439" cy="100" r="80" class="svg-circle svg-circle--1"></circle>
@@ -22,7 +22,7 @@ export default {
             gsapInit();
             getCircyleY();
         })
-        const circyleY =  ref(0);
+        const circyleY =  ref('0');
         function gsapInit(){
             const timeline = gsap.timeline();
             console.log(timeline);
@@ -49,8 +49,9 @@ export default {
             var circyle4 = document.querySelector('.svg-circle--4').attributes[2]
 
             console.log(typeof circyle1, circyle2, circyle3, circyle4)
-            // circyleY.value = (window.innerWidth - 32 - )/2;
+            circyleY.value = (window.innerWidth - 32)/2;
         }
+        return {circyleY}
     }
 
 
