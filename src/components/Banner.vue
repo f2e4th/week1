@@ -37,7 +37,6 @@ export default {
             },0)
         })
 
-
         const circyleY =  ref('0');
         const peopleLeft = ref(0);
         const treeBottem = ref(0);
@@ -45,7 +44,6 @@ export default {
 // methods
         function gsapInit(){
             const timeline = gsap.timeline();
-            console.log(timeline);
             timeline.to('.banner-title', {
                 top: 100 ,
                 duration: 0.5,
@@ -54,11 +52,11 @@ export default {
             })
             timeline.to('.circle-1',{
                 fill: '#FFDC9A',
-                duration: 0.2
+                duration: 0.4
             })
             timeline.to('.circle-2',{
                 fill: '#FFB21E',
-                duration: 0.2
+                duration: 0.3
             })
             timeline.to('.circle-3',{
                 fill: '#EB7F1D',
@@ -66,19 +64,16 @@ export default {
             })
             timeline.to('.circle-4',{
                 fill: '#9C411C',
-                duration: 0.2
+                duration: 0.15
             })
             timeline.to('#starSvg', {
                 fill: '#FFDC9A',
-                duration: 0.2
+                duration: 0.15
             })
             timeline.to('#treeSvg', {
                 fill: '#1F0812',
-                duration: 0.2
+                duration: 0.1
             })
-            // 後面接改svg fill
-            console.log('跑動畫');
-
             // FFDC9A
             // FFB21E
             // EB7F1D
@@ -128,6 +123,7 @@ export default {
     line-height: 104px;
     text-shadow: 0 0.1em #333;
     opacity: 0;
+    font-size: 40px;
 }
 .banner-svg {
     @apply w-full;
@@ -164,5 +160,6 @@ export default {
 .sub-title {
     font-size: 40px;
     line-height: 57px;
+    font-size: 24px;
 }
 </style>
