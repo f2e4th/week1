@@ -31,6 +31,10 @@ export default {
             gsapInit();
             updataLeft();
             resize();
+            setTimeout(function(){
+                updataLeft();
+                updateBottom();
+            },0)
         })
 
 
