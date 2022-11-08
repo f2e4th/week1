@@ -49,11 +49,11 @@ export default {
             })
             timeline.to('.circle-1',{
                 fill: '#FFDC9A',
-                duration: 0.2
+                duration: 0.1
             })
             timeline.to('.circle-2',{
                 fill: '#FFB21E',
-                duration: 0.2
+                duration: 0.15
             })
             timeline.to('.circle-3',{
                 fill: '#EB7F1D',
@@ -61,15 +61,15 @@ export default {
             })
             timeline.to('.circle-4',{
                 fill: '#9C411C',
-                duration: 0.2
+                duration: 0.3
             })
             timeline.to('#starSvg', {
                 fill: '#FFDC9A',
-                duration: 0.2
+                duration: 0.35
             })
             timeline.to('#treeSvg', {
                 fill: '#1F0812',
-                duration: 0.2
+                duration: 0.3
             })
             // 後面接改svg fill
             console.log('跑動畫');
@@ -94,11 +94,11 @@ export default {
             });
         }
         function updataLeft(){
-            if((window.innerWidth > 1024)){
-                peopleLeft.value = 512
-            } else {
+            // if((window.innerWidth > 1024)){
+            //     peopleLeft.value = 512
+            // } else {
                 peopleLeft.value = (window.innerWidth)/2
-            }
+            // }
         }
         watch ( window.innerWidth, ()=>{
             updataLeft();
@@ -113,12 +113,8 @@ export default {
 <style scope lang='scss'>
 #Banner {
     @apply relative  w-full mx-auto my-0;
-    max-width: 1024px;
     height: 1024px;
-    // max-width: 1024px;
-    // @media screen and (min-width:768px) {
-    //     max-width: 414px;
-    // }
+    overflow: hidden;
 }
 .banner-title {
     @apply absolute z-10 w-full bottom-0;
@@ -151,8 +147,8 @@ export default {
     @apply absolute top-0 w-full;
 }
 #treeSvg {
-    @apply absolute top-0 z-10; 
-    min-width: 768px;
+    @apply absolute top-0 w-full z-10; 
+    // min-width: 768px;
 }
 #peopleSvg {
     @apply absolute bottom-96;
