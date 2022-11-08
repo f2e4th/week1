@@ -12,7 +12,7 @@
             <circle class="circle-1" cx="386" cy="386" r="257" fill="#EEF0F1"/>
         </svg>
         <img id="starSvg" :src="starSvg" alt="star">
-        <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleLeft+'px'}" alt="people">
+        <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleLeft+'px',bottom:treeBottem+'px'}" alt="people">
         <img :src="treeSvg" id="treeSvg" alt="tree">
     </div>
   </div>
@@ -35,7 +35,8 @@ export default {
 
 
         const circyleY =  ref('0');
-        const peopleLeft = ref(0)
+        const peopleLeft = ref(0);
+        const treeBottem = ref(0);
 
 // methods
         function gsapInit(){
@@ -91,19 +92,20 @@ export default {
         function resize(){
             window.addEventListener('resize', (event) => {
                 updataLeft();
+                updateBottom();
             });
         }
         function updataLeft(){
-            if((window.innerWidth > 1024)){
-                peopleLeft.value = 512
-            } else {
-                peopleLeft.value = (window.innerWidth)/2
-            }
+            peopleLeft.value = (window.innerWidth)/2
+        }
+        function updateBottom(){
+            var peopleSvgHeight = document.getElementById('peopleSvg').height;
+            treeBottem.value = (window.innerHeight + peopleSvgHeight)/2;
         }
         watch ( window.innerWidth, ()=>{
             updataLeft();
         })
-        return {circyleY, treeSvg, starSvg, peopleSvg, peopleLeft}
+        return {circyleY, treeSvg, starSvg, treeBottem,peopleSvg, peopleLeft}
     },
 
 
@@ -113,12 +115,7 @@ export default {
 <style scope lang='scss'>
 #Banner {
     @apply relative  w-full mx-auto my-0;
-    max-width: 1024px;
     height: 1024px;
-    // max-width: 1024px;
-    // @media screen and (min-width:768px) {
-    //     max-width: 414px;
-    // }
 }
 .banner-title {
     @apply absolute z-10 w-full bottom-0;
@@ -132,7 +129,6 @@ export default {
     @apply w-full;
     &--back {
         @apply h-full relative;
-        // background: rgb(128, 128, 211);
         background: #061C31;
 
     }
@@ -151,8 +147,7 @@ export default {
     @apply absolute top-0 w-full;
 }
 #treeSvg {
-    @apply absolute top-0 z-10; 
-    min-width: 768px;
+    @apply absolute bottom-0 z-10 w-full;
 }
 #peopleSvg {
     @apply absolute bottom-96;
