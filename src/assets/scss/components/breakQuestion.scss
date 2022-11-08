@@ -1,5 +1,5 @@
 @mixin media-lg {
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 1200px) {
 		@content;
 	}
 }
@@ -10,7 +10,7 @@
 	}
 }
 @mixin media-sm {
-	@media screen and (min-width: 414px) {
+	@media screen and (max-width: 414px) {
 		@content;
 	}
 }
@@ -20,33 +20,90 @@
     height: 1024px;
     z-index: 0;
     .warrior{
-        img{
-            max-width: 400px!important;
-            @include media-md{
-                max-width: 250px!important;
-            }
+        // img{
+        //     max-width: 400px;
+        //     @include media-lg{
+        //         width:300px;
+        //     }
+        //     @include media-md{
+        //         max-width: 200px!important;
+        //     }
+        //     @include media-sm{
+        //         max-width: 130px!important;
+        //     }
+        // }
+        width: 400px;
+        @include media-lg{
+            width:300px;
+        }
+        @include media-md{
+            width:30%;
         }
     }
     .badGuy{
-        img{
-            max-width: 400px!important;
-            @include media-md{
-                max-width: 250px!important;
-            }
+        // img{
+        //     max-width: 400px;
+            
+        //     @include media-lg{
+        //     width:300px;
+        //     }
+        //     @include media-md{
+        //         max-width: 200px!important;
+        //     }
+        //     @include media-sm{
+        //         max-width: 130px!important;
+        //     }
+        // }
+        width: 400px;
+        @include media-lg{
+            width:300px;
+        }
+        @include media-md{
+            width:30%;
+        }
+
+    }
+    .break_title{
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+        position: absolute;
+        left: 47%;
+        @include media-md{
+            font-size: 3rem;
+            line-height: 3rem;
+        }
+        @include media-sm{
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+    }
+    .breakquestion_bg{
+        @include media-lg{
+            width:80%;
+        }
+        @include media-sm{
+            width:60%;
         }
     }
     .allCenter{
-            img{
-                max-width: 1000px !important;
-            }
+            // img{
+            //     max-width: 1000px !important;
+            //     @include media-lg{
+            //         width:600px;
+            //     }
+            //     @include media-md{
+            //         max-width: 500px!important;
+            //     }
+            //     @include media-sm{
+            //         max-width: 300px!important;
+            //     }
+            // }
+            background-image: url(/src/assets/images/img_bg_big.png);
+            background-repeat: no-repeat;
+            object-fit: cover;
+            background-size:contain;
+            height: 200px;
 
-            // @include media-lg{
-            //     width: 800px;
-            // }
-            // @include media-md{
-            //     width: 600px;
-            // }
-        
     }
 }
 
