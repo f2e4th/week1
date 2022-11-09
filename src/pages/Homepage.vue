@@ -1,7 +1,8 @@
 <template>
-  <div class="w-full">
+  <div>
     <!-- <h1 class="title">This is Homepage.</h1> -->
     <breakQuestion/>
+    <awardDesign/>
   </div>
 </template>
 
@@ -12,9 +13,11 @@
 </style>
 <script>
 import breakQuestion from '../components/breakQestion.vue';
+import awardDesign from '../components/awardDesign.vue';
 export default{
   components:{
-    breakQuestion
+    breakQuestion,
+    awardDesign
   },
   setup() {
     

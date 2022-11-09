@@ -1,5 +1,6 @@
 <template>
-    <div class="container_break w-full flex justify-center items-center start">  
+    <div class="container_break_test"></div>
+    <div class="container_break w-full flex justify-center items-center">  
        <img class="warrior_inner warrior" src="../assets/images/img_UIRD_big.png"/>
         <div class="break_title w-9  text-white z-30 font-extrabold">互動式網頁設計</div>
         <img class="breakquestion_bg" src="../assets/images/img_bg_big.png" />
@@ -17,25 +18,50 @@ mounted(){
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
     
-    // gsap.fromTo('.break_title', {
-    //   x: 450,
-    //   y: 10,
-    //   opacity: 0,
-    //   visibility: 'hidden',
-    // },
-    // {
-    //   rotation: 0,
-    //   x: 450,
-    //   y: 20,
-    //   duration: 1,
-    //   delay: 1,
-    //   opacity: 1,
-    //   visibility: 'visible',
-    //   scrollTrigger: {
-    //     trigger: '.breakquestion_bg',
-    //     toggleActions: 'play pause resume reset',
-    //   },
-    // });
+    ScrollTrigger.create({
+	 //以作為觸發時機
+      markers: true,
+
+	 //向下滾動進入start點時觸發callback
+      onEnter: function () {
+        animated();
+      },
+
+	  //向下滾動超過end點時觸發callback
+      onLeave: function () {
+        hide();
+      }, 
+
+	 //向上滾動超過end點時觸發（回滾時觸發）callback
+      onEnterBack: function () {
+        animated();
+      },
+
+    });
+
+    function hide() {
+        gsap.set('.break_title', { opacity: 0, visibility: "hidden" });
+        gsap.set('.badGuy', { opacity: 0, visibility: "hidden" });
+        gsap.set('.warrior', { opacity: 0, visibility: "hidden" });
+    }
+
+    function animated(){
+    gsap.fromTo('.break_title', {
+      opacity: 0,
+      visibility: 'hidden',
+    },
+    {
+      rotation: 0,
+      duration: 1,
+      delay: 1,
+      opacity: 1,
+      visibility: 'visible',
+      scrollTrigger: {
+        trigger: '.container_break',
+        toggleActions: 'play pause resume reset',
+      },
+    });
+    
     gsap.fromTo('.badGuy', {
       x: -300,
       y: 150,
@@ -51,11 +77,11 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.breakquestion_bg',
+        trigger: '.container_break',
         toggleActions: 'play pause resume reset',
       },
     });
-
+    
     gsap.fromTo('.warrior', {
       x: 300,
       y: -100,
@@ -71,7 +97,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.breakquestion_bg',
+        trigger: '.container_break',
         toggleActions: 'play pause resume reset',
       },
     });
@@ -113,7 +139,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.breakquestion_bg',
+        trigger: '.container_break',
         toggleActions: 'play pause resume reset',
       },
     });
@@ -132,31 +158,12 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.breakquestion_bg',
+        trigger: '.container_break',
         toggleActions: 'play pause resume reset',
       },
     });
    },
     "(max-width: 768px)": () => {
-    // gsap.fromTo('.break_title', {
-    //   x: 260,
-    //   y: 10,
-    //   opacity: 0,
-    //   visibility: 'hidden',
-    // },
-    // {
-    //   rotation: 0,
-    //   x: 260,
-    //   y: 20,
-    //   duration: 1,
-    //   delay: 1,
-    //   opacity: 1,
-    //   visibility: 'visible',
-    //   scrollTrigger: {
-    //     trigger: '.breakquestion_bg',
-    //     toggleActions: 'play pause resume reset',
-    //   },
-    // });
     gsap.fromTo('.badGuy', {
       x: -190,
       y: 60,
@@ -172,7 +179,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.breakquestion_bg',
+        trigger: '.container_break',
         toggleActions: 'play pause resume reset',
       },
     });
@@ -192,32 +199,13 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.breakquestion_bg',
+        trigger: '.container_break',
         toggleActions: 'play pause resume reset',
       },
     });
    },
  
-   "(max-width: 414px)": () => {
-    // gsap.fromTo('.break_title', {
-    //   x: 210,
-    //   y: 15,
-    //   opacity: 0,
-    //   visibility: 'hidden',
-    // },
-    // {
-    //   rotation: 0,
-    //   x: 210,
-    //   y: 20,
-    //   duration: 1,
-    //   delay: 1,
-    //   opacity: 1,
-    //   visibility: 'visible',
-    //   scrollTrigger: {
-    //     trigger: '.breakquestion_bg',
-    //     toggleActions: 'play pause resume reset',
-    //   },
-    // });
+   "(max-width: 500px)": () => {
     gsap.fromTo('.badGuy', {
       x: -85,
       y: 50,
@@ -233,7 +221,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.breakquestion_bg',
+        trigger: '.container_break',
         toggleActions: 'play pause resume reset',
       },
     });
@@ -253,13 +241,17 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.breakquestion_bg',
+        trigger: '.container_break',
         toggleActions: 'play pause resume reset',
       },
     });
    },
 
 });
+
+    }
+    
+   
 
 },
 unmounted(){
