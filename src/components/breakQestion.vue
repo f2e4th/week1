@@ -1,5 +1,5 @@
 <template>
-    <div class="container_break_test"></div>
+    <!-- <div class="container_break_test"></div> -->
     <div class="container_break w-full flex justify-center items-center">  
        <img class="warrior_inner warrior" src="../assets/images/img_UIRD_big.png"/>
         <div class="break_title w-9  text-white z-30 font-extrabold">互動式網頁設計</div>
@@ -58,7 +58,7 @@ mounted(){
       visibility: 'visible',
       scrollTrigger: {
         trigger: '.container_break',
-        toggleActions: 'play pause resume reset',
+        // toggleActions: 'play pause resume reset',
       },
     });
     
@@ -78,7 +78,7 @@ mounted(){
       visibility: 'visible',
       scrollTrigger: {
         trigger: '.container_break',
-        toggleActions: 'play pause resume reset',
+        // toggleActions: 'play pause resume reset',
       },
     });
     
@@ -98,7 +98,7 @@ mounted(){
       visibility: 'visible',
       scrollTrigger: {
         trigger: '.container_break',
-        toggleActions: 'play pause resume reset',
+        // toggleActions: 'play pause resume reset',
       },
     });
   
@@ -140,7 +140,7 @@ mounted(){
       visibility: 'visible',
       scrollTrigger: {
         trigger: '.container_break',
-        toggleActions: 'play pause resume reset',
+        // toggleActions: 'play pause resume reset',
       },
     });
     gsap.fromTo('.warrior', {
@@ -159,7 +159,7 @@ mounted(){
       visibility: 'visible',
       scrollTrigger: {
         trigger: '.container_break',
-        toggleActions: 'play pause resume reset',
+        // toggleActions: 'play pause resume reset',
       },
     });
    },
@@ -180,7 +180,7 @@ mounted(){
       visibility: 'visible',
       scrollTrigger: {
         trigger: '.container_break',
-        toggleActions: 'play pause resume reset',
+        // toggleActions: 'play pause resume reset',
       },
     });
 
@@ -200,7 +200,7 @@ mounted(){
       visibility: 'visible',
       scrollTrigger: {
         trigger: '.container_break',
-        toggleActions: 'play pause resume reset',
+        // toggleActions: 'play pause resume reset',
       },
     });
    },
@@ -222,7 +222,7 @@ mounted(){
       visibility: 'visible',
       scrollTrigger: {
         trigger: '.container_break',
-        toggleActions: 'play pause resume reset',
+        // toggleActions: 'play pause resume reset',
       },
     });
 
@@ -242,7 +242,7 @@ mounted(){
       visibility: 'visible',
       scrollTrigger: {
         trigger: '.container_break',
-        toggleActions: 'play pause resume reset',
+        // toggleActions: 'play pause resume reset',
       },
     });
    },
