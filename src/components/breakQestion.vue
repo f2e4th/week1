@@ -19,7 +19,6 @@ mounted(){
 
     
     ScrollTrigger.create({
-	 //以作為觸發時機
       markers: true,
 
 	 //向下滾動進入start點時觸發callback
@@ -57,7 +56,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.container_break',
+        trigger: '.breakquestion_bg',
         // toggleActions: 'play pause resume reset',
       },
     });
@@ -77,7 +76,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.container_break',
+        trigger: '.breakquestion_bg',
         // toggleActions: 'play pause resume reset',
       },
     });
@@ -97,7 +96,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.container_break',
+        trigger: '.breakquestion_bg',
         // toggleActions: 'play pause resume reset',
       },
     });
@@ -139,7 +138,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.container_break',
+        trigger: '.breakquestion_bg',
         // toggleActions: 'play pause resume reset',
       },
     });
@@ -158,7 +157,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.container_break',
+        trigger: '.breakquestion_bg',
         // toggleActions: 'play pause resume reset',
       },
     });
@@ -179,7 +178,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.container_break',
+        trigger: '.breakquestion_bg',
         // toggleActions: 'play pause resume reset',
       },
     });
@@ -199,7 +198,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.container_break',
+        trigger: '.breakquestion_bg',
         // toggleActions: 'play pause resume reset',
       },
     });
@@ -221,7 +220,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.container_break',
+        trigger: '.breakquestion_bg',
         // toggleActions: 'play pause resume reset',
       },
     });
@@ -241,7 +240,7 @@ mounted(){
       opacity: 1,
       visibility: 'visible',
       scrollTrigger: {
-        trigger: '.container_break',
+        trigger: '.breakquestion_bg',
         // toggleActions: 'play pause resume reset',
       },
     });

@@ -1,10 +1,20 @@
 <template>
-    <div class="container_award w-full flex justify-center items-center">
-        <!-- <p class=" via-white text-7xl">test</p> -->
+    <div class="container_award w-full flex justify-center items-center flex-col">
+        <div class="text-white text-content-title text-section text-section-first">
+            區區修煉已經無法滿足了嗎？<br>
+            還有比賽等著你！
+        </div>
         <img class="ellipse" src="../assets/images/ellipse.png"/>
-        <img class="absolute treasure" src="../assets/images/treasure_close.png"/>
-        <img class="absolute treasure_half" src="../assets/images/treasure_halfopen.png"/>
-        <img class="absolute treasure_open" src="../assets/images/treasure_open.png"/>
+        <div class="text-white text-content text-section">
+            <div class="text-content-title mb-9">評審機制</div>
+            <div class="mb-5 text-content-inner">
+                初選：將由六角學院前端、UI 評審<br>進行第一波篩選，並於 12/5（五）<br>公布初選佳作名單
+            </div>
+            <div class="text-content-inner">
+                決選：由三大企業針對該企業主題<br>進行入圍獎最後篩選，並於<br>12/23（五）公布企業得獎名單
+            </div>
+        </div>
+        <div class="treasure_all"></div>
     </div>
 </template>
 
@@ -16,10 +26,9 @@ import { TextPlugin } from 'gsap/TextPlugin';
 export default {
     data() {},
     mounted(){
-        gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
     ScrollTrigger.create({
-	 //以作為觸發時機
       markers: true,
 
 	 //向下滾動進入start點時觸發callback
@@ -40,111 +49,58 @@ export default {
     });
 
     function hide() {
-        gsap.set('.treasure', { opacity: 1, visibility: "visible" });
-        gsap.set('.treasure_half', { opacity: 0, visibility: "hidden" });
-        gsap.set('.treasure_open', { opacity: 0, visibility: "hidden" });
-        gsap.set('.ellipse', { opacity: 0, visibility: "hidden" });
+        const tl = gsap.timeline({
+        scrollTrigger:{
+            trigger:'.text-section-first',
+            markers:true
+          }
+        })
+
+        gsap.set('.ellipse', { opacity: 0.3, visibility: "visible" });
+        tl.to('.treasure_all', 1, {backgroundImage:'url(../../../../src/assets/images/treasure_close.png)'
+        })
     }
 
- 
-
     function animated(){
-    // gsap.fromTo('.treasure', {
-    //   x: 0,
-    //   y: 200,
-    //   opacity: 1,
-    //   visibility: 'visible',
-    // },
-    // {
-    //   x: 0,
-    //   y: 250,
-    //   rotation: 0,
-    //   duration: 5,
-    //   delay: 3,
-    //   opacity: 0,
-    //   visibility: 'hidden',
-    //   scrollTrigger: {
-    //     trigger: '.container_award',
-    //     // toggleActions: 'play pause resume reset',
-    //   },
-    // });
-    gsap.fromTo('.ellipse', {
-      opacity: 0.3,
-      visibility: 'visible',
-    },
-    {
-      rotation: 0,
-      duration: 4,
-      delay: 3,
-      opacity: 0.5,
-      visibility: 'visible',
-      ease: "expo",
-      scrollTrigger: {
-        trigger: '.container_award',
-        // toggleActions: 'play pause resume reset',
-      },
-    });
-    gsap.fromTo('.ellipse', {
-      opacity: 0.5,
-      visibility: 'visible',
-    },
-    {
-      rotation: 0,
-      duration: 5,
-      delay: 3.5,
-      opacity: 1,
-      visibility: 'visible',
-      scrollTrigger: {
-        trigger: '.container_award',
-        // toggleActions: 'play pause resume reset',
-      },
+        gsap.fromTo('.ellipse', {
+            opacity: 0.3,
+            visibility: 'visible',
+        },
+        {
+            duration: 4,
+            delay: 1.5,
+            opacity: 1,
+            visibility: 'visible',
+            scrollTrigger: {
+                trigger: '.treasure_all',
+        },
     });
 
+        gsap.fromTo('.text-section', {
+            opacity: 0.3,
+            visibility: 'visible',
+        },
+        {
+            duration: 4,
+            delay: 1.5,
+            opacity: 1,
+            visibility: 'visible',
+            scrollTrigger: {
+                trigger: '.treasure_all',
+            },
+        });
 
-    // gsap.fromTo('.treasure_half', {
-    //   opacity: 1,
-    //   x: 0,
-    //   y: 200,
-    //   visibility: 'hidden',
-    // },
-    // {
-    //   rotation: 0,
-    //   duration: 5,
-    //   x: 0,
-    //   y: 200,
-    //   delay: 4,
-    //   opacity: 1,
-    //   visibility: 'visible',
-    //   ease: "expo",
-    //   scrollTrigger: {
-    //     trigger: '.container_award',
-    //     // toggleActions: 'play pause resume reset',
-    //   },
-    // });
+        const tl = gsap.timeline({
+            scrollTrigger:{
+                trigger:'.treasure_all',
+                markers:true
+            }
+        });
 
-
-    // gsap.to('.treasure_open', {
-    //   x: 0,
-    //   y: 200,
-    //   opacity: 0,
-    //   visibility: 'hidden',
-    // },
-    // {
-    //   x: 0,
-    //   y: 200,
-    //   duration: 5,
-    //   delay: 5,
-    //   opacity: 1,
-    //   visibility: 'visible',
-    //   scrollTrigger: {
-    //     trigger: '.container_award',
-    //     ease: "expo"
-
-    //     // toggleActions: 'play pause resume reset',
-    //   },
-    // });
-}
-
+        tl.to('.treasure_all', 1, {backgroundImage:'url(../../../../src/assets/images/treasure_close.png)'
+        }).to('.treasure_all', 1.2, {backgroundImage:'url(../../../../src/assets/images/treasure_halfopen.png)'
+        }).to('.treasure_all', 1.5, {backgroundImage:'url(../../../../src/assets/images/treasure_open.png)'}) 
+      }
 
     }
 }

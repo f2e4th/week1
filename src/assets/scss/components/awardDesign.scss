@@ -2,14 +2,30 @@
     background: #061C31;
     height: 1024px;
     z-index: 0;
-    .treasure{
-        margin-top: 150px;
-        transition-delay:3s;
+    .treasure_all{
+        background-repeat: no-repeat;
+        opacity: 1;
+        background-image: url('../../../../src/assets/images/treasure_close.png');
+        width: 300px;
+        height: 500px;
+        position: absolute;
+        margin-top: 780px;
     }
-    // .treasure_half{
-    //     visibility:hidden;
-    // }
-    // .treasure_open{
-    //     visibility: hidden;
-    // }
+    .text-content{
+        position: absolute;
+    }
+    .text-content-inner{
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .text-content-title{
+        font-size: 40px;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 500;
+        line-height: 3rem;
+    }
+ 
 }
