@@ -43,30 +43,32 @@ function gsapInit() {
       pin: true, // 要postion fixed 的時候 pin需要設為true,
       markers: false,
       scrub: true,
+      start: 'top',
+      end: 'bottom'
     },
   });
-  timeline.to(".img_div--1", {
-    scrollTrigger: {
-      trigger: "#Subjects",
-      markers: false,
-      start: "top",
-      end: "center 30%",
-      height: 0,
-      scrub: true,
-    },
-    height: 0,
-  });
-  timeline.to(".img_div--2", {
-    scrollTrigger: {
-      trigger: "#Subjects",
-      markers: true,
-      start: "center 30%",
-      end: "",
-      height: 0,
-      scrub: true,
-    },
-    height: 0,
-  });
+//   timeline.to(".img_div--1", {
+//     scrollTrigger: {
+//       trigger: "#Subjects",
+//       markers: false,
+//       start: "top 66%",
+//       end: "top",
+//       height: 0,
+//       scrub: true,
+//     },
+//     height: 0,
+//   });
+//   timeline.to(".img_div--2", {
+//     scrollTrigger: {
+//       trigger: "#Subjects",
+//       markers: false,
+//       start: "top 66%",
+//       end: "top",
+//       height: 0,
+//       scrub: true,
+//     },
+//     height: 0,
+//   });
   // timeline.to('.img_div--3', {
   //     scrollTrigger:{
   //         trigger: '#Subjects',
