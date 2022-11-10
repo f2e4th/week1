@@ -1,6 +1,11 @@
 <template>
   <div id="Progress">
-    <div class="progreassBar"></div>
+    <div class="progreassBar">
+      <div class="timeline" :style="`height:${card_data.length*272}px`">
+        <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*272}px`"></div>
+        <div class="circle circle--bottom"></div>
+      </div>
+    </div>
     <ul class="list_container">
       <li v-for="(item, i) in card_data" :key="i" >
         <div class="Progress__card">
@@ -69,21 +74,35 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/scss/all.scss';
 #Progress {
-  @apply py-10;
+  @apply py-10 px-4 relative;
   background-color: #061C31;
   height: 1024px;
 }
 .list_container {
   @apply flex flex-col;
   > li {
+    @apply relative;
     max-width: 300px;
+    // &::before {
+    //   @apply rounded-full block;
+    //   width: 15px;
+    //   height: 15px;
+    //   content: '';
+    //   background: #102F4C;
+    //   position: absolute;
+    // }
   }
   >li:nth-child(odd){
     align-self: flex-end;
+    // &::before {
+    //   left: calc(-50%);
+    // }
   }
   >li:nth-child(even){
-   
     align-self: flex-start;
+    // &::before {
+    //   right: 0;
+    // }
   }
 }
 .Progress__card {
@@ -93,6 +112,30 @@ export default {
     img {
       @apply w-full h-full;
     }
+  }
+}
+.progreassBar {
+  @apply absolute top-0 w-full flex justify-center;
+  top: 80px;
+  .timeline{
+    @apply rounded-md relative;
+    width: 8px;
+    height: 500px;
+    background: #102F4D;
+  }
+
+}
+.circle {
+  @apply rounded-full;
+  width: 20px;
+  height: 20px;
+  background: #102F4D;
+  left: -6px;
+  &.circle--top{
+    @apply absolute top-0;
+  }
+  &.circle--bottom {
+    @apply absolute bottom-0;
   }
 }
 
