@@ -47,17 +47,17 @@ function gsapInit() {
       end: 'bottom'
     },
   });
-//   timeline.to(".img_div--1", {
-//     scrollTrigger: {
-//       trigger: "#Subjects",
-//       markers: false,
-//       start: "top 66%",
-//       end: "top",
-//       height: 0,
-//       scrub: true,
-//     },
-//     height: 0,
-//   });
+  timeline.to(".img_div--1", {
+    scrollTrigger: {
+      trigger: "#Subjects",
+      markers: false,
+      start: "top",
+      end: "center 16.5%",
+      height: 0,
+      scrub: true,
+    },
+    height: 0,
+  });
 //   timeline.to(".img_div--2", {
 //     scrollTrigger: {
 //       trigger: "#Subjects",
