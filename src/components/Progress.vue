@@ -1,9 +1,9 @@
 <template>
   <div id="Progress">
     <div class="progreassBar">
-      <div class="timeline" :style="`height:${card_data.length*272}px`">
-        <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*272}px`"></div>
-        <div class="circle circle--bottom"></div>
+      <div class="timeline" :style="`height:${(card_data.length-1)*200}px`">
+        <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*200}px`"></div>
+        <!-- <div class="circle circle--bottom"></div> -->
       </div>
     </div>
     <ul class="list_container">
@@ -78,45 +78,55 @@ export default {
   background-color: #061C31;
   height: 1024px;
 }
+
 .list_container {
-  @apply flex flex-col;
+  @apply flex flex-col mx-auto my-0;
+    max-width: 768px;
   > li {
     @apply relative;
     max-width: 300px;
-    // &::before {
-    //   @apply rounded-full block;
-    //   width: 15px;
-    //   height: 15px;
-    //   content: '';
-    //   background: #102F4C;
-    //   position: absolute;
-    // }
   }
   >li:nth-child(odd){
     align-self: flex-end;
-    // &::before {
-    //   left: calc(-50%);
-    // }
+    margin-left: 60px;
+    .Progress__card {
+      @apply items-start;
+    }
   }
   >li:nth-child(even){
     align-self: flex-start;
-    // &::before {
-    //   right: 0;
-    // }
+    margin-right: 60px;
+    .Progress__card {
+      @apply items-end;
+    }
   }
-}
-.Progress__card {
-  .img {
-    width: 200px;
-    height: 200px;
-    img {
-      @apply w-full h-full;
+  .Progress__card {
+    @apply flex flex-col;
+    font-weight: 500;
+    .title {
+      line-height: 46.34px;
+      font-size: 34px;
+    }
+    .subtitle{
+      line-height: 23.17px;
+      font-size: 16px;
+    }
+    .content {
+      line-height: 23.17px;
+      font-size: 16px;
+    }
+    .img {
+      width: 100px;
+      height: 100px;
+      img {
+        @apply w-full h-full;
+      }
     }
   }
 }
 .progreassBar {
   @apply absolute top-0 w-full flex justify-center;
-  top: 80px;
+  top: 110px;
   .timeline{
     @apply rounded-md relative;
     width: 8px;
