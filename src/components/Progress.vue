@@ -73,6 +73,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/scss/all.scss';
+$mobildSize: 700px;
 #Progress {
   @apply py-10 px-4 relative;
   background-color: #061C31;
@@ -89,6 +90,9 @@ export default {
   >li:nth-child(odd){
     align-self: flex-end;
     margin-left: 60px;
+    @media screen and (max-width:$mobildSize) {
+        align-self: flex-start;
+    }
     .Progress__card {
       @apply items-start;
     }
@@ -96,8 +100,16 @@ export default {
   >li:nth-child(even){
     // align-self: flex-start;
     margin-right: 60px;
+    @media screen and (max-width:$mobildSize) {
+        align-content: flex-start;
+        margin-right: 0;
+        margin-left: 180px;
+    }
     .Progress__card {
       @apply items-end;
+      @media screen and (max-width:$mobildSize) {
+        @apply items-start;
+      }
     }
   }
   .Progress__card {
@@ -127,6 +139,9 @@ export default {
 .progreassBar {
   @apply absolute top-0 w-full flex justify-center;
   top: 110px;
+  @media screen and (max-width: $mobildSize) {
+    width: 20px;
+  }
   .timeline{
     @apply rounded-md relative;
     width: 8px;
