@@ -1,9 +1,9 @@
 <template>
   <div id="Progress">
     <div class="progreassBar"></div>
-    <ul>
-      <li>
-        <div v-for="(item, i) in card_data" :key="i" class="Progress__card">
+    <ul class="list_container">
+      <li v-for="(item, i) in card_data" :key="i" >
+        <div class="Progress__card">
           <div class="title">{{item.title}}</div>
           <div class="subtitle">{{item.subtitle}}</div>
           <div class="content">{{item.content}}</div>
@@ -72,6 +72,19 @@ export default {
   @apply py-10;
   background-color: #061C31;
   height: 1024px;
+}
+.list_container {
+  @apply flex flex-col;
+  > li {
+    max-width: 300px;
+  }
+  >li:nth-child(odd){
+    align-self: flex-end;
+  }
+  >li:nth-child(even){
+   
+    align-self: flex-start;
+  }
 }
 .Progress__card {
   .img {
