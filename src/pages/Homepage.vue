@@ -2,6 +2,7 @@
   <div>
     <Banner/>
     <Subjects/>
+    <Progress/>
   </div>
 </template>
 
@@ -14,6 +15,7 @@
 import Banner from '../components/Banner.vue';
 import Subjects from '../components/Subjects.vue'
 
+import Progress from '../components/Progress.vue';
 export default{
   setup() {
     
@@ -21,6 +23,7 @@ export default{
   components: {
     Banner,
     Subjects
+    Progress
   }
 }
 </script>

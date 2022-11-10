@@ -12,7 +12,7 @@
             <circle class="circle-1" cx="386" cy="386" r="257" fill="#EEF0F1"/>
         </svg>
         <img id="starSvg" :src="starSvg" alt="star">
-        <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleLeft+'px'}" alt="people">
+        <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleLeft+'px',bottom:treeBottem+'px'}" alt="people">
         <img :src="treeSvg" id="treeSvg" alt="tree">
     </div>
   </div>
@@ -31,16 +31,19 @@ export default {
             gsapInit();
             updataLeft();
             resize();
+            setTimeout(function(){
+                updataLeft();
+                updateBottom();
+            },0)
         })
 
-
         const circyleY =  ref('0');
-        const peopleLeft = ref(0)
+        const peopleLeft = ref(0);
+        const treeBottem = ref(0);
 
 // methods
         function gsapInit(){
             const timeline = gsap.timeline();
-            console.log(timeline);
             timeline.to('.banner-title', {
                 top: 100 ,
                 duration: 0.5,
@@ -49,11 +52,11 @@ export default {
             })
             timeline.to('.circle-1',{
                 fill: '#FFDC9A',
-                duration: 0.1
+                duration: 0.4
             })
             timeline.to('.circle-2',{
                 fill: '#FFB21E',
-                duration: 0.15
+                duration: 0.3
             })
             timeline.to('.circle-3',{
                 fill: '#EB7F1D',
@@ -61,19 +64,16 @@ export default {
             })
             timeline.to('.circle-4',{
                 fill: '#9C411C',
-                duration: 0.3
+                duration: 0.15
             })
             timeline.to('#starSvg', {
                 fill: '#FFDC9A',
-                duration: 0.35
+                duration: 0.15
             })
             timeline.to('#treeSvg', {
                 fill: '#1F0812',
-                duration: 0.3
+                duration: 0.1
             })
-            // 後面接改svg fill
-            console.log('跑動畫');
-
             // FFDC9A
             // FFB21E
             // EB7F1D
@@ -91,19 +91,20 @@ export default {
         function resize(){
             window.addEventListener('resize', (event) => {
                 updataLeft();
+                updateBottom();
             });
         }
         function updataLeft(){
-            // if((window.innerWidth > 1024)){
-            //     peopleLeft.value = 512
-            // } else {
-                peopleLeft.value = (window.innerWidth)/2
-            // }
+            peopleLeft.value = (window.innerWidth)/2
+        }
+        function updateBottom(){
+            var peopleSvgHeight = document.getElementById('peopleSvg').height;
+            treeBottem.value = (window.innerHeight + peopleSvgHeight)/2;
         }
         watch ( window.innerWidth, ()=>{
             updataLeft();
         })
-        return {circyleY, treeSvg, starSvg, peopleSvg, peopleLeft}
+        return {circyleY, treeSvg, starSvg, treeBottem,peopleSvg, peopleLeft}
     },
 
 
@@ -114,7 +115,6 @@ export default {
 #Banner {
     @apply relative  w-full mx-auto my-0;
     height: 1024px;
-    overflow: hidden;
 }
 .banner-title {
     @apply absolute z-10 w-full bottom-0;
@@ -123,12 +123,12 @@ export default {
     line-height: 104px;
     text-shadow: 0 0.1em #333;
     opacity: 0;
+    font-size: 40px;
 }
 .banner-svg {
     @apply w-full;
     &--back {
         @apply h-full relative;
-        // background: rgb(128, 128, 211);
         background: #061C31;
 
     }
@@ -147,8 +147,7 @@ export default {
     @apply absolute top-0 w-full;
 }
 #treeSvg {
-    @apply absolute top-0 w-full z-10; 
-    // min-width: 768px;
+    @apply absolute bottom-0 z-10 w-full;
 }
 #peopleSvg {
     @apply absolute bottom-96;
@@ -161,5 +160,6 @@ export default {
 .sub-title {
     font-size: 40px;
     line-height: 57px;
+    font-size: 24px;
 }
 </style>
