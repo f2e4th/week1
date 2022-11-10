@@ -94,7 +94,7 @@ export default {
     }
   }
   >li:nth-child(even){
-    align-self: flex-start;
+    // align-self: flex-start;
     margin-right: 60px;
     .Progress__card {
       @apply items-end;
