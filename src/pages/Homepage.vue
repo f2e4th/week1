@@ -1,6 +1,7 @@
 <template>
   <div>
     <Banner/>
+    <Progress/>
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 </style>
 <script>
 import Banner from '../components/Banner.vue';
+import Progress from '../components/Progress.vue';
 export default{
   setup() {
     
   },
   components: {
-    Banner
+    Banner,
+    Progress
   }
 }
 </script>
