@@ -8,7 +8,7 @@
           <div class="subtitle">{{item.subtitle}}</div>
           <div class="content">{{item.content}}</div>
           <div class="img">
-            <img :src="img_list[i+1]" alt="img">
+            <img :src="img_list[i]" alt="img">
           </div>
         </div>
       </li>
