@@ -49,7 +49,7 @@ function gsapInit() {
   });
   timeline.to(".img_div--1", {
     scrollTrigger: {
-      trigger: "#Subjects",
+      trigger: ".img_div--1",
       markers: false,
       start: "top top",
       end: "9%",
@@ -60,10 +60,10 @@ function gsapInit() {
   });
   timeline.to(".img_div--2", {
     scrollTrigger: {
-      trigger: "#Subjects",
+      trigger: ".img_div--2",
       markers: true,
-      start: "29% 35%",
-      end: "9%",
+      start: "center top",
+      end: "81%",
       height: 0,
       scrub: true,
     },
