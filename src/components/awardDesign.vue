@@ -15,6 +15,9 @@
             </div>
         </div>
         <div class="treasure_all"></div>
+        <img class="diamond_red" src="../assets/images/diamond_red.png"/>
+        <img class="diamond_red2" src="../assets/images/diamond_red2.png"/>
+        <img class="diamond_green" src="../assets/images/diamond_green.png"/>
     </div>
 </template>
 
@@ -57,6 +60,9 @@ export default {
         })
 
         gsap.set('.ellipse', { opacity: 0.3, visibility: "visible" });
+        gsap.set('.diamond_red', { opacity: 0, visibility: "hidden" });
+        gsap.set('.diamond_red2', { opacity: 0, visibility: "hidden" });
+        gsap.set('.diamond_green', { opacity: 0, visibility: "hidden" });
         tl.to('.treasure_all', 1, {backgroundImage:'url(../../../../src/assets/images/treasure_close.png)'
         })
     }
@@ -69,6 +75,57 @@ export default {
         {
             duration: 4,
             delay: 1.5,
+            opacity: 1,
+            visibility: 'visible',
+            scrollTrigger: {
+                trigger: '.treasure_all',
+        },
+    });
+    gsap.fromTo('.diamond_red', {
+            opacity: 0,
+            visibility: 'hidden',
+            x:50,
+            y:-50,
+        },
+        {
+            x:100,
+            y:-150,
+            duration: 4,
+            delay: 2,
+            opacity: 1,
+            visibility: 'visible',
+            scrollTrigger: {
+                trigger: '.treasure_all',
+        },
+    });
+    gsap.fromTo('.diamond_green', {
+            opacity: 0,
+            visibility: 'hidden',
+            x:50,
+            y:-50,
+        },
+        {
+            x:-150,
+            y:-200,
+            duration: 4,
+            delay: 2,
+            opacity: 1,
+            visibility: 'visible',
+            scrollTrigger: {
+                trigger: '.treasure_all',
+        },
+    });
+    gsap.fromTo('.diamond_red2', {
+            opacity: 0,
+            visibility: 'hidden',
+            x:50,
+            y:-50,
+        },
+        {
+            x:-200,
+            y:-120,
+            duration: 4,
+            delay: 2,
             opacity: 1,
             visibility: 'visible',
             scrollTrigger: {
@@ -101,6 +158,8 @@ export default {
         }).to('.treasure_all', 1.2, {backgroundImage:'url(../../../../src/assets/images/treasure_halfopen.png)'
         }).to('.treasure_all', 1.5, {backgroundImage:'url(../../../../src/assets/images/treasure_open.png)'}) 
       }
+
+      
 
     }
 }
