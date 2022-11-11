@@ -114,13 +114,27 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: true,
-        markers: true,
+        markers: false,
         scrub: false,
         start: '40% center',
         end: 'center top',
-        toggleActions: "play none  reverse reverse"
+        toggleActions: "play none  none none"
       },
       height: 420,
+      duration: 0.3
+      // height: (card_data.length-1)*205+5+100
+    });
+    timeline.to(".timeline--bright__container", {
+      scrollTrigger: {
+        trigger: "#Progress",
+        pin: true,
+        markers: true,
+        scrub: false,
+        start: '15% 15%',
+        end: '40% top',
+        toggleActions: "play none  none none"
+      },
+      height: 620,
       duration: 0.3
       // height: (card_data.length-1)*205+5+100
     });
