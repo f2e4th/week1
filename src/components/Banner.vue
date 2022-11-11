@@ -38,7 +38,7 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
             resize();
             setTimeout(function(){
                 updataLeft();
-                updateBottom();
+                // updateBottom();
             },0)
         })
 
@@ -113,8 +113,14 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
 
 <style scope lang='scss'>
 #Banner {
-    @apply relative  w-full mx-auto my-0;
+    @apply relative  w-full mx-auto my-0 overflow-y-hidden;
     height: 1024px;
+    @media screen and (max-width: 1024px) {
+        height: 80%;
+    }
+    @media screen and (max-width: 700px) {
+        height: 50%;
+    }
 }
 .banner-title {
     @apply absolute z-10 w-full bottom-0;
@@ -149,6 +155,7 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
 #treeSvg {
     @apply absolute bottom-0 z-10 w-full;
     fill:#061C31;
+    // max-width: 1000px;
 }
 #peopleSvg {
     @apply absolute bottom-96;
@@ -157,6 +164,9 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
 #moonSvg{
     width: 50%;
     transform: translateY(50px);
+    @media screen and (max-width:600px) {
+        height: 500px;
+    }
 }
 .sub-title {
     font-size: 40px;
@@ -170,4 +180,7 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
 //     -webkit-mask: url("../assets/svg/img_tree_UIRD.svg") no-repeat center center;
 //     mask: url("../assets/svg/img_tree_UIRD.svg") no-repeat center center;
 // }
+.banner-svg--back  {
+    background: #1F0812;
+}
 </style>
