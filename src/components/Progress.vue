@@ -98,6 +98,10 @@ $mobildSize: 700px;
 .list_container {
   @apply flex flex-col mx-auto my-0;
     max-width: 768px;
+    @media screen and (max-width:$mobildSize) {
+      @apply items-center;
+      padding-left: 40px;
+    }
   > li {
     @apply relative;
     max-width: 300px;
@@ -155,27 +159,27 @@ $mobildSize: 700px;
   @apply absolute top-0 w-full flex justify-center;
   top: 110px;
   @media screen and (max-width: $mobildSize) {
-    width: 20px;
+    width: 40px;
   }
-  .imeline--dark__container {
-    width: 28px;
-    transform: translateX(17px);
+  .timeline--dark__container {
+    @media screen and (max-width: $mobildSize) {
+        transform: translateX(34px);
+      }
   }
   .timeline--bright__container {
     @apply overflow-y-hidden flex justify-center;
       width: 28px;
       transform: translateX(-17px);
+      @media screen and (max-width: $mobildSize) {
+        transform: translateX(17px);
+      }
   }
   .timeline{
     @apply rounded-md relative;
     width: 8px;
     height: 500px;
     background: #102F4D;
-    &--dark {
-      // transform: translateX(4px);
-    }
     &--bright {
-      // transform: translateX(-4px);
       background-color: $main_active;
       .circle {
         background-color: $main_active;
