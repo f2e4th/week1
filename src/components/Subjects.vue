@@ -116,7 +116,7 @@ function gsapInit() {
 <style lang="scss" scoped>
 @import "../assets/scss/all.scss";
 #SubjectsContainer {
-  padding-top: 212px;
+  padding-top: 160px;
   background: $main_bg;
 
   #Subjects {
