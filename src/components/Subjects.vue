@@ -83,33 +83,44 @@ function gsapInit() {
       markers: false,
       start: "top top",
       end: "9%",
-      height: 0,
       scrub: true,
     },
     height: 0,
   });
+  timeline.to(".title_1", {
+    scrollTrigger: {
+      trigger: ".img_div--1",
+      markers: false,
+      start: "top top",
+      end: "top",
+      scrub: false,
+      toggleActions: "play reverse  play reverse"
+    },
+    height: 0,
+    duraiton: 0.3
+  },"<");
   timeline.to(".img_div--2", {
     scrollTrigger: {
       trigger: ".img_div--2",
       markers: false,
       start: "center top",
       end: "81%",
-      height: 0,
       scrub: true,
     },
     height: 0,
   });
-  // timeline.to('.img_div--3', {
-  //     scrollTrigger:{
-  //         trigger: '#Subjects',
-  //         markers: false,
-  //         start: 'top 66%',
-  //         end: 'bottom',
-  //         height: 0,
-  //         scrub: true
-  //     },
-  //     height: 0,
-  // })
+  timeline.to(".title_2", {
+    scrollTrigger: {
+      trigger: ".img_div--2",
+      markers: true,
+      start: "bottom 15%",
+      end: "bottom",
+      scrub: false,
+      toggleActions: "play reverse  play reverse"
+    },
+    height: 0,
+    duraiton: 0.3
+  },"<");
 }
 </script>
 
@@ -127,7 +138,7 @@ function gsapInit() {
 .title_layout {
   @apply w-full;
   .title {
-    @apply absolute w-full;
+    @apply absolute w-full overflow-hidden;
     top: 60px;
     background: $main_bg;
     font-weight: 500;
