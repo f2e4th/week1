@@ -67,91 +67,166 @@ const imgs = reactive([
 function gsapInit() {
   gsap.registerPlugin(scrollTrigger);
   const timeline = gsap.timeline();
-//   ScrollTrigger.matchMedia({
-//   // 跟設定css 一樣  如果畫面不小於 992px 執行
-//   "(min-width: 992px)": () => { 執行內容 },
-//   // 畫面不小於 768px 執行
-//   "(min-width: 768px)": () => { 執行內容 },
-//   // 不管畫面大小，我都執行
-//   "all": () => { 執行內容 },
-// });
-  timeline.to("#Subjects", {
-    scrollTrigger: {
-      trigger: "#SubjectsContainer",
-      pin: true, // 要postion fixed 的時候 pin需要設為true,
-      markers: false,
-      scrub: true,
-      start: 'botom',
-      end: 'bottom'
+  scrollTrigger.matchMedia({
+    "(min-width: 1100px)": () => { 
+        timeline.to("#Subjects", {
+        scrollTrigger: {
+            trigger: "#SubjectsContainer",
+            pin: true, // 要postion fixed 的時候 pin需要設為true,
+            markers: false,
+            scrub: true,
+            start: 'botom',
+            end: 'bottom'
+        },
+        });
+        timeline.to(".img_div--1", {
+        scrollTrigger: {
+            trigger: ".img_div--1",
+            markers: false,
+            start: "top top",
+            end: "9%",
+            scrub: true,
+        },
+        height: 0,
+        });
+        timeline.to(".title_1", {
+        scrollTrigger: {
+            trigger: ".img_div--1",
+            markers: false,
+            start: "10% top",
+            end: "bottom top",
+            scrub: false,
+            toggleActions: "play none  reverse reverse"
+        },
+        height: 0,
+        duration: 0.3
+        },"<");
+        timeline.to(".footer_1", {
+        scrollTrigger: {
+            trigger: ".img_div--1",
+            markers: false,
+            start: "top top",
+            end: "top",
+            scrub: false,
+            toggleActions: "play none  reverse reverse"
+        },
+        height: 0,
+        duraiton: 0.3
+        },"<");
+        timeline.to(".img_div--2", {
+        scrollTrigger: {
+            trigger: ".img_div--2",
+            markers: false,
+            start: "center top",
+            end: "81%",
+            scrub: true,
+        },
+        height: 0,
+        });
+        timeline.to(".title_2", {
+        scrollTrigger: {
+            trigger: ".img_div--2",
+            markers: false,
+            start: "bottom 25%",
+            end: "bottom",
+            scrub: false,
+            toggleActions: "play none  reverse reverse"
+        },
+        height: 0
+        },"<");
+        timeline.to(".footer_2", {
+        scrollTrigger: {
+            trigger: ".img_div--1",
+            markers: false,
+            start: "center top",
+            end: "bottom",
+            scrub: false,
+            toggleActions: "play none  reverse reverse"
+        },
+        height: 0,
+        duraiton: 0.3
+        },"<");
     },
-  });
-  timeline.to(".img_div--1", {
-    scrollTrigger: {
-      trigger: ".img_div--1",
-      markers: false,
-      start: "top top",
-      end: "9%",
-      scrub: true,
-    },
-    height: 0,
-  });
-  timeline.to(".title_1", {
-    scrollTrigger: {
-      trigger: ".img_div--1",
-      markers: false,
-      start: "10% top",
-      end: "bottom top",
-      scrub: false,
-      toggleActions: "play none  reverse reverse"
-    },
-    height: 0,
-    duration: 0.3
-  },"<");
-  timeline.to(".footer_1", {
-    scrollTrigger: {
-      trigger: ".img_div--1",
-      markers: false,
-      start: "top top",
-      end: "top",
-      scrub: false,
-      toggleActions: "play none  reverse reverse"
-    },
-    height: 0,
-    duraiton: 0.3
-  },"<");
-  timeline.to(".img_div--2", {
-    scrollTrigger: {
-      trigger: ".img_div--2",
-      markers: false,
-      start: "center top",
-      end: "81%",
-      scrub: true,
-    },
-    height: 0,
-  });
-  timeline.to(".title_2", {
-    scrollTrigger: {
-      trigger: ".img_div--2",
-      markers: true,
-      start: "bottom 25%",
-      end: "bottom",
-      scrub: false,
-      toggleActions: "play none  reverse reverse"
-    },
-    height: 0
-  },"<");
-  timeline.to(".footer_2", {
-    scrollTrigger: {
-      trigger: ".img_div--1",
-      markers: false,
-      start: "center top",
-      end: "bottom",
-      scrub: false,
-      toggleActions: "play none  reverse reverse"
-    },
-    height: 0,
-    duraiton: 0.3
-  },"<");
+    "(max-width: 1099px)": () => {
+        timeline.to("#Subjects", {
+        scrollTrigger: {
+            trigger: "#SubjectsContainer",
+            pin: true, // 要postion fixed 的時候 pin需要設為true,
+            markers: false,
+            scrub: true,
+            start: 'botom',
+            end: 'bottom'
+        },
+        });
+        timeline.to(".img_div--1", {
+        scrollTrigger: {
+            trigger: ".img_div--1",
+            markers: false,
+            start: "top top",
+            end: "9%",
+            scrub: true,
+        },
+        height: 0,
+        });
+        timeline.to(".title_1", {
+        scrollTrigger: {
+            trigger: ".img_div--1",
+            markers: false,
+            start: "10% top",
+            end: "bottom top",
+            scrub: false,
+            toggleActions: "play none  reverse reverse"
+        },
+        height: 0,
+        duration: 0.3
+        },"<");
+        timeline.to(".footer_1", {
+        scrollTrigger: {
+            trigger: ".img_div--1",
+            markers: false,
+            start: "top top",
+            end: "top",
+            scrub: false,
+            toggleActions: "play none  reverse reverse"
+        },
+        height: 0,
+        duraiton: 0.3
+        },"<");
+        timeline.to(".img_div--2", {
+        scrollTrigger: {
+            trigger: ".img_div--2",
+            markers: false,
+            start: "center top",
+            end: "81%",
+            scrub: true,
+        },
+        height: 0,
+        });
+        timeline.to(".title_2", {
+        scrollTrigger: {
+            trigger: ".img_div--2",
+            markers: false,
+            start: "bottom 25%",
+            end: "bottom",
+            scrub: false,
+            toggleActions: "play none  reverse reverse"
+        },
+        height: 0
+        },"<");
+        timeline.to(".footer_2", {
+        scrollTrigger: {
+            trigger: ".img_div--1",
+            markers: false,
+            start: "center top",
+            end: "bottom",
+            scrub: false,
+            toggleActions: "play none  reverse reverse"
+        },
+        height: 0,
+        duraiton: 0.3
+        },"<");
+    }
+});
 }
 </script>
 
