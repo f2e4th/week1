@@ -67,6 +67,14 @@ const imgs = reactive([
 function gsapInit() {
   gsap.registerPlugin(scrollTrigger);
   const timeline = gsap.timeline();
+//   ScrollTrigger.matchMedia({
+//   // 跟設定css 一樣  如果畫面不小於 992px 執行
+//   "(min-width: 992px)": () => { 執行內容 },
+//   // 畫面不小於 768px 執行
+//   "(min-width: 768px)": () => { 執行內容 },
+//   // 不管畫面大小，我都執行
+//   "all": () => { 執行內容 },
+// });
   timeline.to("#Subjects", {
     scrollTrigger: {
       trigger: "#SubjectsContainer",
@@ -176,16 +184,29 @@ function gsapInit() {
     @apply relative w-full;
     width: 600px;
     height: 600px;
+    @media screen and (max-width:700px) {
+      @apply flex justify-center;
+      width: 360px;
+      height: 360px;
+    }
     .img_div {
-      @apply absolute top-0;
+      @apply absolute top-0 overflow-hidden;
       height: 600px;
       width: 600px;
-      overflow: hidden;
       background: $main_bg;
+      @media screen and (max-width:700px) {
+        width: 360px;
+        height: 360px;
+      }
     }
     img {
       width: 600px;
       height: 600px;
+      @media screen and (max-width:700px) {
+        width: 360px;
+        height: 360px;
+      }
+
     }
   }
 }
