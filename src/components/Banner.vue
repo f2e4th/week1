@@ -12,7 +12,6 @@
             <circle class="circle-1" cx="386" cy="386" r="257" fill="#EEF0F1"/>
         </svg>
         <img id="starSvg" :src="starSvg" alt="star">
-        <!-- <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleLeft+'px',bottom:treeBottem+'px'}" alt="people"> -->
         <img :src="treeSvgConbin" id="treeSvg" alt="tree">
         <!-- <treeSvgConbin class="absolute top-0"/> -->
         <!-- <div id="maskTree" class="w-full"></div> -->
@@ -31,84 +30,49 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
 </script>
 
 <script setup>
+    onMounted( ()=>{
+        gsapInit();
+    })
 
-        onMounted( ()=>{
-            gsapInit();
-            updataLeft();
-            resize();
-            setTimeout(function(){
-                updataLeft();
-                // updateBottom();
-            },0)
-        })
-
-        const circyleY =  ref('0');
-        const peopleLeft = ref(0);
-        const treeBottem = ref(0);
+    const circyleY =  ref('0');
+    const peopleLeft = ref(0);
+    const treeBottem = ref(0);
 
 // methods
-        function gsapInit(){
-            const timeline = gsap.timeline();
-            timeline.to('.banner-title', {
-                top: 100 ,
-                duration: 0.5,
-                delay: 0.5,
-                opacity: 1
-            })
-            timeline.to('.circle-1',{
-                fill: '#FFDC9A',
-                duration: 0.4
-            })
-            timeline.to('.circle-2',{
-                fill: '#FFB21E',
-                duration: 0.3
-            })
-            timeline.to('.circle-3',{
-                fill: '#EB7F1D',
-                duration: 0.2
-            })
-            timeline.to('.circle-4',{
-                fill: '#9C411C',
-                duration: 0.15
-            })
-            timeline.to('#starSvg', {
-                fill: '#FFDC9A',
-                duration: 0.15
-            })
-            timeline.to('#treeSvg', {
-                fill: '#1F0812',
-                duration: 0.1
-            })
-            // FFDC9A
-            // FFB21E
-            // EB7F1D
-            // 9C411C
-            // 1F0812
-
-        }
-        function returnTitlePositionY (){
-            var backHeight = document.querySelector('.banner-svg--back').offsetHeight;
-            // var frontHeight = document.querySelector('.banner-svg--front').offsetHeight
-            var titleHeight = document.querySelector('.banner-title').offsetHeight
-            console.log(backHeight);
-            return backHeight-titleHeight - 20;
-        }
-        function resize(){
-            window.addEventListener('resize', (event) => {
-                updataLeft();
-                updateBottom();
-            });
-        }
-        function updataLeft(){
-            peopleLeft.value = (window.innerWidth)/2
-        }
-        function updateBottom(){
-            var peopleSvgHeight = document.getElementById('peopleSvg').height;
-            treeBottem.value = (window.innerHeight + peopleSvgHeight)/2;
-        }
-        watch ( window.innerWidth, ()=>{
-            updataLeft();
+    function gsapInit(){
+        const timeline = gsap.timeline();
+        timeline.to('.banner-title', {
+            top: 100 ,
+            duration: 0.5,
+            delay: 0.5,
+            opacity: 1
         })
+        timeline.to('.circle-1',{
+            fill: '#FFDC9A',
+            duration: 0.4
+        })
+        timeline.to('.circle-2',{
+            fill: '#FFB21E',
+            duration: 0.3
+        })
+        timeline.to('.circle-3',{
+            fill: '#EB7F1D',
+            duration: 0.2
+        })
+        timeline.to('.circle-4',{
+            fill: '#9C411C',
+            duration: 0.15
+        })
+        timeline.to('#starSvg', {
+            fill: '#FFDC9A',
+            duration: 0.15
+        })
+        timeline.to('#treeSvg', {
+            fill: '#1F0812',
+            duration: 0.1
+        })
+
+    }
 </script>
 
 <style scope lang='scss'>
