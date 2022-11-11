@@ -42,6 +42,18 @@ mounted(){
         gsap.set('.break_title', { opacity: 0, visibility: "hidden" });
         gsap.set('.badGuy', { opacity: 0, visibility: "hidden" });
         gsap.set('.warrior', { opacity: 0, visibility: "hidden" });
+        gsap.to('.badGuy', {
+        x: -300,
+        y: 150,
+        opacity: 0,
+        visibility: 'hidden',
+        });
+        gsap.to('.warrior', {
+        x: 300,
+        y: -100,
+        opacity: 0,
+        visibility: 'hidden',
+        });
     }
 
     function animated(){

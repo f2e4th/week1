@@ -6,7 +6,7 @@
         </div>
         <img class="ellipse" src="../assets/images/ellipse.png"/>
         <div class="text-white text-content text-section">
-            <div class="text-content-title mb-9">評審機制</div>
+            <div class="text-content-title mb-9 mt-4">評審機制</div>
             <div class="mb-5 text-content-inner">
                 初選：將由六角學院前端、UI 評審<br>進行第一波篩選，並於 12/5（五）<br>公布初選佳作名單
             </div>
