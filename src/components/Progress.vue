@@ -90,24 +90,40 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: true, // 要postion fixed 的時候 pin需要設為true,
-        markers: false,
-        scrub: true,
-        start: 'top botom',
-        end: 'bottom'
+        markers: true,
+        scrub: false,
+        start: 'center bottom',
+        end: 'center top',
+        toggleActions: "play none  reverse reverse"
       },
-      height: (card_data.length-1)*205+5+100
+      height: 220,
+      duration: 0.3
+      // height: (card_data.length-1)*205+5+100
     });
     timeline.to(".currentPositionContainer", {
       scrollTrigger: {
         trigger: "#Progress",
         markers: false,
         scrub: true,
-        start: 'top botom',
-        end: 'bottom'
+        start: 'top bottom',
+        end: 'bottom bottom'
       },
       top: (card_data.length-1)*205+5+100>=620?620:(card_data.length-1)*205+5+100
-    });
-  }
+      },"<");
+    // timeline.to(".timeline--bright__container", {
+    //   scrollTrigger: {
+    //     trigger: "#Progress",
+    //     markers: false,
+    //     scrub: false,
+    //     start: 'center bottom',
+    //     end: 'top top',
+    //     toggleActions: "play none  reverse reverse"
+    //   },
+    //   height: 420,
+    //   duration: 0.3
+    //   // height: (card_data.length-1)*205+5+100
+    // });
+    }
   onMounted(()=>{
     gsapInit();
   })
@@ -199,6 +215,7 @@ $mobildSize: 700px;
   .timeline--bright__container {
     @apply overflow-y-hidden flex justify-center relative;
       // width: 28px;
+      transition: all 0.3s;
       width: 110px;
       transform: translateX(-17px);
       @media screen and (max-width: $mobildSize) {
