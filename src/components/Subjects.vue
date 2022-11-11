@@ -1,6 +1,7 @@
 <template>
   <div id="SubjectsContainer">
     <div id="Subjects">
+
       <div class="title_layout">
         <div class="title  title_3">
           <h1>WEEK 3</h1>
@@ -15,6 +16,7 @@
           <h2>The F2E 活動網站設計</h2>
         </div>
       </div>
+
       <div class="img_layout">
         <div class="img_container">
           <div class="img_div img_div--3">
@@ -28,6 +30,22 @@
           </div>
         </div>
       </div>
+
+      <div class="footer_layout">
+        <div class="footer footer_3">
+          <h3 class="title">JS draggable</h3>
+          <h4 class="subtitle">#鈦坦科技</h4>
+        </div>
+        <div class="footer footer_2">
+          <h3 class="title">Canvas</h3>
+          <h4 class="subtitle">#凱鈿行動科技</h4>
+        </div>
+        <div class="footer footer_1">
+          <h3 class="title">視差滾動</h3>
+          <h4 class="subtitle">#板塊設計</h4>
+        </div>
+      </div>
+
     </div>
     </div>
 </template>
@@ -123,17 +141,33 @@ function gsapInit() {
     @apply relative w-full;
     width: 600px;
     height: 600px;
+    .img_div {
+      @apply absolute top-0;
+      height: 600px;
+      width: 600px;
+      overflow: hidden;
+      background: $main_bg;
+    }
     img {
       width: 600px;
       height: 600px;
     }
   }
 }
-.img_div {
-  @apply absolute top-0;
-  height: 600px;
-  width: 600px;
-  overflow: hidden;
-  background: $main_bg;
+.footer_layout {
+  @apply relative;
+  .footer {
+    @apply  w-full absolute top-10;
+    font-weight: 500;
+    background: $main_bg;
+    .title {
+      font-size: 32px;
+      line-height: 46.34px;
+    }
+    .subtitle {
+      font-size: 24px;
+      line-height: 37.5px;
+    }
+  }
 }
 </style>
