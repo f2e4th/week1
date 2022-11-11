@@ -1,9 +1,15 @@
 <template>
   <div id="Progress">
     <div class="progreassBar">
-      <div class="timeline" :style="`height:${(card_data.length-1)*200}px`">
-        <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*200}px`"></div>
-        <!-- <div class="circle circle--bottom"></div> -->
+      <div class="timeline--dark__container" :style="`height:${(card_data.length-1)*205+5}px`">
+        <div class="timeline timeline--dark" :style="`height:${(card_data.length-1)*205}px`">
+          <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*200}px`"></div>
+        </div>
+      </div>
+      <div class="timeline--bright__container" :style="`height:${(card_data.length-1)*205+5}px`">
+        <div class="timeline timeline--bright" :style="`height:${(card_data.length-1)*205}px`">
+          <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*200}px`"></div>
+        </div>
       </div>
     </div>
     <ul class="list_container">
@@ -55,6 +61,13 @@ import gsap from "gsap";
       img: progress_4
     }
   ])
+
+  function gsapInit(){
+    gsap.registerPlugin(scrollTrigger);
+    const timeline = gsap.timeline();
+
+  }
+
 </script>
 
 <style lang="scss" scoped>
@@ -128,11 +141,30 @@ $mobildSize: 700px;
   @media screen and (max-width: $mobildSize) {
     width: 20px;
   }
+  .imeline--dark__container {
+    width: 28px;
+    transform: translateX(17px);
+  }
+  .timeline--bright__container {
+    @apply overflow-y-hidden flex justify-center;
+      width: 28px;
+      transform: translateX(-17px);
+  }
   .timeline{
     @apply rounded-md relative;
     width: 8px;
     height: 500px;
     background: #102F4D;
+    &--dark {
+      // transform: translateX(4px);
+    }
+    &--bright {
+      // transform: translateX(-4px);
+      background-color: $main_active;
+      .circle {
+        background-color: $main_active;
+      }
+    }
   }
 
 }
