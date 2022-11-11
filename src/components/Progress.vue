@@ -6,7 +6,8 @@
           <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*200}px`"></div>
         </div>
       </div>
-      <div class="timeline--bright__container" :style="`height:${(card_data.length-1)*205+5}px`">
+      <!-- <div class="timeline--bright__container" :style="`height:${(card_data.length-1)*205+5}px`"> -->
+      <div class="timeline--bright__container" style="height: 0;">
         <div class="timeline timeline--bright" :style="`height:${(card_data.length-1)*205}px`">
           <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*200}px`"></div>
         </div>
@@ -33,6 +34,7 @@ import progress_2 from '../assets/img/progress_2.png';
 import progress_3 from '../assets/img/progress_3.png';
 import progress_4 from '../assets/img/progress_4.png';
 import gsap from "gsap";
+import scrollTrigger from "gsap/scrollTrigger";
 </script>
 <script setup>
   const card_data = reactive([
@@ -65,8 +67,22 @@ import gsap from "gsap";
   function gsapInit(){
     gsap.registerPlugin(scrollTrigger);
     const timeline = gsap.timeline();
-
+    // 
+    timeline.to(".timeline--bright__container", {
+    scrollTrigger: {
+      trigger: "#Progress",
+      pin: true, // 要postion fixed 的時候 pin需要設為true,
+      markers: true,
+      scrub: true,
+      start: 'top botom',
+      end: 'bottom'
+    },
+    height: (card_data.length-1)*205+5
+  });
   }
+  onMounted(()=>{
+    gsapInit();
+  })
 
 </script>
 
