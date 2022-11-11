@@ -1,17 +1,35 @@
 <template>
   <div id="Progress">
-    <div class="progreassBar">
+    <div class="progreassBar" >
       <div class="timeline--dark__container" :style="`height:${(card_data.length-1)*205+5}px`">
         <div class="timeline timeline--dark" :style="`height:${(card_data.length-1)*205}px`">
           <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*200}px`"></div>
         </div>
-      </div>
-      <!-- <div class="timeline--bright__container" :style="`height:${(card_data.length-1)*205+5}px`"> -->
-      <div class="timeline--bright__container" style="height: 0;">
-        <div class="timeline timeline--bright" :style="`height:${(card_data.length-1)*205}px`">
-          <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*200}px`"></div>
+        <div class="currentPositionContainer">
+          <div id="currentPosition">
+            <div class="lg">
+              <div class="md">
+                <div class="sm"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    <div class="timeline--bright__container" style="height: 0;">
+      <div class="currentPositionContainer">
+          <div id="currentPosition">
+            <div class="lg" style="background: transparent;">
+              <div class="md" style="background: transparent;">
+                <div class="sm"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="timeline timeline--bright" :style="`height:${(card_data.length-1)*205}px`">
+        <div v-for="(item, i) in card_data" :key="i" class="circle circle--top" :style="`top:${i*200}px`"></div>
+      </div>
+    </div>
+
     </div>
     <ul class="list_container">
       <li v-for="(item, i) in card_data" :key="i" >
@@ -77,7 +95,7 @@ import scrollTrigger from "gsap/scrollTrigger";
       start: 'top botom',
       end: 'bottom'
     },
-    height: (card_data.length-1)*205+5
+    height: (card_data.length-1)*205+5+100
   });
   }
   onMounted(()=>{
@@ -162,13 +180,16 @@ $mobildSize: 700px;
     width: 40px;
   }
   .timeline--dark__container {
+    @apply relative;
+    transform: translateX(42px);
     @media screen and (max-width: $mobildSize) {
         transform: translateX(34px);
       }
   }
   .timeline--bright__container {
-    @apply overflow-y-hidden flex justify-center;
-      width: 28px;
+    @apply overflow-y-hidden flex justify-center relative;
+      // width: 28px;
+      width: 110px;
       transform: translateX(-17px);
       @media screen and (max-width: $mobildSize) {
         transform: translateX(17px);
@@ -200,6 +221,45 @@ $mobildSize: 700px;
   &.circle--bottom {
     @apply absolute bottom-0;
   }
+}
+.timeline--dark__container .currentPositionContainer {
+    left: -46px;
+}
+.currentPositionContainer {
+  @apply absolute z-10;
+    top: 60px;
+  #currentPosition {
+    @apply relative;
+    width: 100px;
+    height: 100px;
+    .lg {
+      @apply rounded-full absolute top-0 left-0;
+      width: 100px;
+      height: 100px;
+      background-color: rgba(81, 162, 191, .2);
+    }
+    .md {
+      @apply rounded-full absolute;
+      width: 60px;
+      height: 60px;
+      background-color: rgba(81, 162, 191, .5);
+      left: 20px;
+      top: 20px;
+    }
+    .sm {
+      @apply rounded-full absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #FFFFFF;
+      left: 20px;
+      top: 20px;
+    }
+  }
+}
+.timeline--dark__container,
+.timeline--bright__container {
+  padding-top: 100px;
+  margin-top: -100px;
 }
 
 </style>
