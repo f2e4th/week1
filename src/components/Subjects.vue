@@ -158,6 +158,8 @@ function gsapInit() {
 
 <style lang="scss" scoped>
 @import "../assets/scss/all.scss";
+$pc_img_size:500px;
+$mobile_img_size: 360px;
 #SubjectsContainer {
   padding-top: 160px;
   background: $main_bg;
@@ -185,29 +187,31 @@ function gsapInit() {
   @apply flex justify-center;
   .img_container {
     @apply relative w-full;
-    width: 600px;
-    height: 600px;
+    width: $pc_img_size;
+    height: $pc_img_size;
     @media screen and (max-width:700px) {
       @apply flex justify-center;
-      width: 360px;
-      height: 360px;
+      width: $mobile_img_size;
+      height: $mobile_img_size;
     }
     .img_div {
       @apply absolute top-0 overflow-hidden;
-      height: 600px;
-      width: 600px;
-      background: $main_bg;
+    //   height: 600px;
+    //   width: 600px;
+        height: $pc_img_size;
+        width: $pc_img_size;
+        background: $main_bg;
       @media screen and (max-width:700px) {
-        width: 360px;
-        height: 360px;
+        width: $mobile_img_size;
+        height: $mobile_img_size;
       }
     }
     img {
-      width: 600px;
-      height: 600px;
+      width: $pc_img_size;
+      height: $pc_img_size;
       @media screen and (max-width:700px) {
-        width: 360px;
-        height: 360px;
+        width: $mobile_img_size;
+        height: $mobile_img_size;
       }
 
     }
