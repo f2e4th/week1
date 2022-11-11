@@ -12,21 +12,26 @@
             <circle class="circle-1" cx="386" cy="386" r="257" fill="#EEF0F1"/>
         </svg>
         <img id="starSvg" :src="starSvg" alt="star">
-        <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleLeft+'px',bottom:treeBottem+'px'}" alt="people">
-        <img :src="treeSvg" id="treeSvg" alt="tree">
+        <!-- <img id="peopleSvg" :src="peopleSvg" :style="{left:peopleLeft+'px',bottom:treeBottem+'px'}" alt="people"> -->
+        <img :src="treeSvgConbin" id="treeSvg" alt="tree">
+        <!-- <treeSvgConbin class="absolute top-0"/> -->
+        <!-- <div id="maskTree" class="w-full"></div> -->
     </div>
   </div>
 </template>
-
 <script>
 import {ref, reactive, onMounted, computed, watch} from "vue";
 import gsap from "gsap";
 import treeSvg from '../assets/svg/img_tree_blue_big.svg'
 import starSvg from '../assets/svg/img_star_blue_big.png'
 import peopleSvg from '../assets/svg/img_RD&UI_big.svg'
+import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
+// import treeSvgConbin from '../components/Tree.vue';
 
-export default {
-    setup(){
+</script>
+
+<script setup>
+
         onMounted( ()=>{
             gsapInit();
             updataLeft();
@@ -104,11 +109,6 @@ export default {
         watch ( window.innerWidth, ()=>{
             updataLeft();
         })
-        return {circyleY, treeSvg, starSvg, treeBottem,peopleSvg, peopleLeft}
-    },
-
-
-}
 </script>
 
 <style scope lang='scss'>
@@ -148,6 +148,7 @@ export default {
 }
 #treeSvg {
     @apply absolute bottom-0 z-10 w-full;
+    fill:#061C31;
 }
 #peopleSvg {
     @apply absolute bottom-96;
@@ -162,4 +163,11 @@ export default {
     line-height: 57px;
     font-size: 24px;
 }
+// #maskTree {
+//     @apply absolute top-0 w-full z-20 h-full;
+//     background: url("../assets/svg/img_tree_UIRD.svg") no-repeat top center;
+//     background-size: cover;
+//     -webkit-mask: url("../assets/svg/img_tree_UIRD.svg") no-repeat center center;
+//     mask: url("../assets/svg/img_tree_UIRD.svg") no-repeat center center;
+// }
 </style>
