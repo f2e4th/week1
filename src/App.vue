@@ -15,5 +15,6 @@ import Homepage from './pages/Homepage.vue'
 #app{
   @apply w-full p-0;
   max-width: initial;
+  background-color: $main_bg;
 }
 </style>

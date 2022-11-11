@@ -165,6 +165,9 @@ function gsapInit() {
   #Subjects {
     height: 1024px;
     background: $main_bg;
+    @media screen and (max-width: 600px)  {
+      height :600px;
+    }
   }
 }
 .title_layout {

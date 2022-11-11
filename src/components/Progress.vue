@@ -100,7 +100,7 @@ import scrollTrigger from "gsap/scrollTrigger";
     timeline.to(".currentPositionContainer", {
       scrollTrigger: {
         trigger: "#Progress",
-        markers: true,
+        markers: false,
         scrub: true,
         start: 'top botom',
         end: 'bottom'
