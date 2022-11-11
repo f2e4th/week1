@@ -102,10 +102,10 @@ function gsapInit() {
       start: "10% top",
       end: "bottom top",
       scrub: false,
-      toggleActions: "play reverse  play reverse"
+      toggleActions: "play none  reverse reverse"
     },
     height: 0,
-    duraiton: 0.3
+    duration: 0.3
   },"<");
   timeline.to(".footer_1", {
     scrollTrigger: {
@@ -129,18 +129,17 @@ function gsapInit() {
     },
     height: 0,
   });
-//   timeline.to(".title_2", {
-//     scrollTrigger: {
-//       trigger: ".img_div--2",
-//       markers: false,
-//       start: "bottom 15%",
-//       end: "bottom",
-//       scrub: false,
-//       toggleActions: "play reverse  play reverse"
-//     },
-//     height: 0,
-//     duraiton: 0.3
-//   },"<");
+  timeline.to(".title_2", {
+    scrollTrigger: {
+      trigger: ".img_div--2",
+      markers: true,
+      start: "bottom 25%",
+      end: "bottom",
+      scrub: false,
+      toggleActions: "play reverse  none reverse"
+    },
+    height: 0
+  },"<");
   timeline.to(".footer_2", {
     scrollTrigger: {
       trigger: ".img_div--1",
