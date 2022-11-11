@@ -136,7 +136,7 @@ function gsapInit() {
       start: "bottom 25%",
       end: "bottom",
       scrub: false,
-      toggleActions: "play reverse  none reverse"
+      toggleActions: "play none  reverse reverse"
     },
     height: 0
   },"<");
