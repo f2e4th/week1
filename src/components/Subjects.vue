@@ -99,6 +99,18 @@ function gsapInit() {
     height: 0,
     duraiton: 0.3
   },"<");
+  timeline.to(".footer_1", {
+    scrollTrigger: {
+      trigger: ".img_div--1",
+      markers: false,
+      start: "top top",
+      end: "top",
+      scrub: false,
+      toggleActions: "play reverse  play reverse"
+    },
+    height: 0,
+    duraiton: 0.3
+  },"<");
   timeline.to(".img_div--2", {
     scrollTrigger: {
       trigger: ".img_div--2",
@@ -112,8 +124,20 @@ function gsapInit() {
   timeline.to(".title_2", {
     scrollTrigger: {
       trigger: ".img_div--2",
-      markers: true,
+      markers: false,
       start: "bottom 15%",
+      end: "bottom",
+      scrub: false,
+      toggleActions: "play reverse  play reverse"
+    },
+    height: 0,
+    duraiton: 0.3
+  },"<");
+  timeline.to(".footer_2", {
+    scrollTrigger: {
+      trigger: ".img_div--1",
+      markers: false,
+      start: "center top",
       end: "bottom",
       scrub: false,
       toggleActions: "play reverse  play reverse"
@@ -168,7 +192,7 @@ function gsapInit() {
 .footer_layout {
   @apply relative;
   .footer {
-    @apply  w-full absolute top-10;
+    @apply  w-full absolute top-10 overflow-hidden;
     font-weight: 500;
     background: $main_bg;
     .title {
