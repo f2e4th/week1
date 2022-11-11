@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="title">This is Homepage.</h1>
+    <!-- <h1 class="title">This is Homepage.</h1> -->
   </div>
   <askQuestion></askQuestion>
 </template>
