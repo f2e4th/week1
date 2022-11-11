@@ -87,16 +87,26 @@ import scrollTrigger from "gsap/scrollTrigger";
     const timeline = gsap.timeline();
     // 
     timeline.to(".timeline--bright__container", {
-    scrollTrigger: {
-      trigger: "#Progress",
-      pin: true, // 要postion fixed 的時候 pin需要設為true,
-      markers: true,
-      scrub: true,
-      start: 'top botom',
-      end: 'bottom'
-    },
-    height: (card_data.length-1)*205+5+100
-  });
+      scrollTrigger: {
+        trigger: "#Progress",
+        pin: true, // 要postion fixed 的時候 pin需要設為true,
+        markers: false,
+        scrub: true,
+        start: 'top botom',
+        end: 'bottom'
+      },
+      height: (card_data.length-1)*205+5+100
+    });
+    timeline.to(".currentPositionContainer", {
+      scrollTrigger: {
+        trigger: "#Progress",
+        markers: true,
+        scrub: true,
+        start: 'top botom',
+        end: 'bottom'
+      },
+      top: (card_data.length-1)*205+5+100
+    });
   }
   onMounted(()=>{
     gsapInit();
@@ -227,7 +237,10 @@ $mobildSize: 700px;
 }
 .currentPositionContainer {
   @apply absolute z-10;
-    top: 60px;
+    // top: 60px;
+    top:20px;
+    // top: 120px;
+    transform: translateY(-60px);
   #currentPosition {
     @apply relative;
     width: 100px;
@@ -258,8 +271,8 @@ $mobildSize: 700px;
 }
 .timeline--dark__container,
 .timeline--bright__container {
-  padding-top: 100px;
-  margin-top: -100px;
+  // padding-top: 100px;
+  // margin-top: -100px;
 }
 
 </style>
