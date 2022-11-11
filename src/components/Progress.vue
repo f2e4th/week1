@@ -105,7 +105,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         start: 'top botom',
         end: 'bottom'
       },
-      top: (card_data.length-1)*205+5+100
+      top: (card_data.length-1)*205+5+100>=620?620:(card_data.length-1)*205+5+100
     });
   }
   onMounted(()=>{
