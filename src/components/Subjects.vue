@@ -114,7 +114,7 @@ function gsapInit() {
       start: "top top",
       end: "top",
       scrub: false,
-      toggleActions: "play reverse  play reverse"
+      toggleActions: "play none  reverse reverse"
     },
     height: 0,
     duraiton: 0.3
@@ -147,7 +147,7 @@ function gsapInit() {
       start: "center top",
       end: "bottom",
       scrub: false,
-      toggleActions: "play reverse  play reverse"
+      toggleActions: "play none  reverse reverse"
     },
     height: 0,
     duraiton: 0.3
