@@ -150,6 +150,17 @@ import scrollTrigger from "gsap/scrollTrigger";
       duration: 0.3
       // height: (card_data.length-1)*205+5+100
     });
+    timeline.to(".currentPositionContainer", {
+      scrollTrigger: {
+        trigger: "#Progress",
+        markers: false,
+        scrub: false,
+        start: '15% 15%',
+        end: '40% top',
+        toggleActions: "play pause  pause pause"
+      },
+      top: 620
+      },"<");
     }
   onMounted(()=>{
     gsapInit();
