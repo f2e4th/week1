@@ -94,7 +94,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: 'center bottom',
         end: 'center top',
-        toggleActions: "play none none none"
+        toggleActions: "play none reset none"
       },
       height: 220,
       duration: 0.3
@@ -106,7 +106,7 @@ import scrollTrigger from "gsap/scrollTrigger";
           markers: false,
           scrub: false,
           start: 'center bottom',
-          end: 'enter top',
+          end: 'center top',
           toggleActions: "play none none none"
         } ,
         duration: 0.3,
@@ -119,7 +119,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         markers: false,
         scrub: false,
         start: '40% center',
-        end: 'center top',
+        end: '40%  top',
         toggleActions: "play none none none"
       },
       height: 420,
@@ -131,7 +131,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         markers: false,
         scrub: false,
         start: '40% center',
-        end: 'center top',
+        end: '40%  top',
         toggleActions: "play none none none"
       },
       top: 420
@@ -140,10 +140,10 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: true,
-        markers: false,
+        markers: true,
         scrub: false,
         start: '15% 15%',
-        end: '40% top',
+        end: '15% top',
         toggleActions: "play none none none"
       },
       height: 620,
@@ -156,7 +156,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         markers: false,
         scrub: false,
         start: '15% 15%',
-        end: '40% top',
+        end: '15% top',
         toggleActions: "play none none none"
       },
       top: 620
