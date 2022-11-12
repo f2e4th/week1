@@ -90,7 +90,7 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: false, // 要postion fixed 的時候 pin需要設為true,
-        markers: true,
+        markers: false,
         scrub: false,
         start: 'center bottom',
         end: 'center top',
@@ -124,18 +124,18 @@ import scrollTrigger from "gsap/scrollTrigger";
       },
       height: 420,
       duration: 0.3
-      // height: (card_data.length-1)*205+5+100
     });
-    // timeline.to(".currentPositionContainer", {
-      // scrollTrigger: {
-      //   trigger: "#Progress",
-      //   markers: false,
-      //   scrub: true,
-      //   start: 'top bottom',
-      //   end: 'bottom bottom'
-      // },
-      // top: (card_data.length-1)*205+5+100>=620?620:(card_data.length-1)*205+5+100
-      // },"<");
+    timeline.to(".currentPositionContainer", {
+      scrollTrigger: {
+        trigger: "#Progress",
+        markers: false,
+        scrub: false,
+        start: '40% center',
+        end: 'center top',
+        toggleActions: "play pause  pause pause"
+      },
+      top: 420
+      },"<");
     timeline.to(".timeline--bright__container", {
       scrollTrigger: {
         trigger: "#Progress",
