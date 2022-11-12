@@ -90,7 +90,7 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: false, // 要postion fixed 的時候 pin需要設為true,
-        markers: false,
+        markers: true,
         scrub: false,
         start: 'center bottom',
         end: 'center top',
@@ -102,14 +102,15 @@ import scrollTrigger from "gsap/scrollTrigger";
     });
     timeline.to(".currentPositionContainer", {
       scrollTrigger: {
-        trigger: "#Progress",
-        markers: false,
-        scrub: true,
-        start: 'top bottom',
-        end: 'bottom bottom'
-      },
-      // top: (card_data.length-1)*205+5+100>=620?620:(card_data.length-1)*205+5+100
-      top: 220
+          trigger: "#Progress",
+          markers: false,
+          scrub: false,
+          start: 'center bottom',
+          end: 'enter top',
+          toggleActions: "play none  reverse reverse"
+        } ,
+        duration: 0.3,
+        top: 220,
       },"<");
     timeline.to(".timeline--bright__container", {
       scrollTrigger: {
@@ -125,16 +126,16 @@ import scrollTrigger from "gsap/scrollTrigger";
       duration: 0.3
       // height: (card_data.length-1)*205+5+100
     });
-    timeline.to(".currentPositionContainer", {
-      scrollTrigger: {
-        trigger: "#Progress",
-        markers: false,
-        scrub: true,
-        start: 'top bottom',
-        end: 'bottom bottom'
-      },
-      top: (card_data.length-1)*205+5+100>=620?620:(card_data.length-1)*205+5+100
-      },"<");
+    // timeline.to(".currentPositionContainer", {
+      // scrollTrigger: {
+      //   trigger: "#Progress",
+      //   markers: false,
+      //   scrub: true,
+      //   start: 'top bottom',
+      //   end: 'bottom bottom'
+      // },
+      // top: (card_data.length-1)*205+5+100>=620?620:(card_data.length-1)*205+5+100
+      // },"<");
     timeline.to(".timeline--bright__container", {
       scrollTrigger: {
         trigger: "#Progress",
