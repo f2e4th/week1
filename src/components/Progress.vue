@@ -110,11 +110,8 @@ import scrollTrigger from "gsap/scrollTrigger";
         } ,
         duration: 0.3,
         top: 220,
-    }
-
-    timeline.to(".timeline--bright__container", lineAni_1);
-    timeline.to(".currentPositionContainer", pointAni_1,"<");
-    timeline.to(".timeline--bright__container", {
+    },
+    lineAni_2 = {
       scrollTrigger: {
         trigger: "#Progress",
         pin: true,
@@ -126,8 +123,8 @@ import scrollTrigger from "gsap/scrollTrigger";
       },
       height: 420,
       duration: 0.3
-    });
-    timeline.to(".currentPositionContainer", {
+    },
+    pointAni_2 = {
       scrollTrigger: {
         trigger: "#Progress",
         markers: false,
@@ -137,12 +134,12 @@ import scrollTrigger from "gsap/scrollTrigger";
         toggleActions: "play none none none"
       },
       top: 420
-      },"<");
-    timeline.to(".timeline--bright__container", {
+    },
+    lineAni_3 = {
       scrollTrigger: {
         trigger: "#Progress",
         pin: true,
-        markers: true,
+        markers: false,
         scrub: false,
         start: '15% 15%',
         end: '15% top',
@@ -151,8 +148,8 @@ import scrollTrigger from "gsap/scrollTrigger";
       height: 620,
       duration: 0.3
       // height: (card_data.length-1)*205+5+100
-    });
-    timeline.to(".currentPositionContainer", {
+    },
+    pointAni_3 = {
       scrollTrigger: {
         trigger: "#Progress",
         markers: false,
@@ -162,7 +159,14 @@ import scrollTrigger from "gsap/scrollTrigger";
         toggleActions: "play none none none"
       },
       top: 620
-      },"<");
+      }
+
+    timeline.to(".timeline--bright__container", lineAni_1);
+    timeline.to(".currentPositionContainer", pointAni_1,"<");
+    timeline.to(".timeline--bright__container", lineAni_2);
+    timeline.to(".currentPositionContainer", pointAni_2,"<");
+    timeline.to(".timeline--bright__container", lineAni_3);
+    timeline.to(".currentPositionContainer", pointAni_3,"<");
     }
   onMounted(()=>{
     gsapInit();
