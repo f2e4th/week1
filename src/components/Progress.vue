@@ -94,7 +94,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: 'center bottom',
         end: 'center top',
-        toggleActions: "play none  reverse reverse"
+        toggleActions: "play none none none"
       },
       height: 220,
       duration: 0.3
@@ -107,7 +107,7 @@ import scrollTrigger from "gsap/scrollTrigger";
           scrub: false,
           start: 'center bottom',
           end: 'enter top',
-          toggleActions: "play none  reverse reverse"
+          toggleActions: "play none none none"
         } ,
         duration: 0.3,
         top: 220,
@@ -120,7 +120,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: '40% center',
         end: 'center top',
-        toggleActions: "play pause  pause pause"
+        toggleActions: "play none none none"
       },
       height: 420,
       duration: 0.3
@@ -132,7 +132,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: '40% center',
         end: 'center top',
-        toggleActions: "play pause  pause pause"
+        toggleActions: "play none none none"
       },
       top: 420
       },"<");
@@ -144,7 +144,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: '15% 15%',
         end: '40% top',
-        toggleActions: "play pause  pause pause"
+        toggleActions: "play none none none"
       },
       height: 620,
       duration: 0.3
@@ -157,7 +157,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: '15% 15%',
         end: '40% top',
-        toggleActions: "play pause  pause pause"
+        toggleActions: "play none none none"
       },
       top: 620
       },"<");
