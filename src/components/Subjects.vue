@@ -19,14 +19,8 @@
 
       <div class="img_layout">
         <div class="img_container">
-          <div class="img_div img_div--3">
-            <img src="../assets/img/img_week3_big.png" alt="img" />
-          </div>
-          <div class="img_div img_div--2">
-            <img src="../assets/img/img_week2_big.png" alt="img" />
-          </div>
-          <div class="img_div img_div--1">
-            <img src="../assets/img/img_week1_big.png" alt="img" />
+          <div v-for="(item, i) in sections" :key="i" class="img_div" :class="`img_div--${item.id}`">
+            <img :src="item.img" alt="img" />
           </div>
         </div>
       </div>
