@@ -85,14 +85,20 @@ import scrollTrigger from "gsap/scrollTrigger";
   function gsapInit(){
     gsap.registerPlugin(scrollTrigger);
     const timeline = gsap.timeline();
-    const lineAni_1 = {
+    const startPoint_1 = 'center bottom',
+    endPoint_1 = 'center top',
+    startPoint_2 = '40% center',
+    endPoint_2 = '40% top',
+    startPoint_3 = '15% 15%',
+    endPoint_3 = '15% top',
+    lineAni_1 = {
       scrollTrigger: {
         trigger: "#Progress",
         pin: false,
         markers: false,
         scrub: false,
-        start: 'center bottom',
-        end: 'center top',
+        start: startPoint_1,
+        end: endPoint_1,
         toggleActions: "play none none none"
       },
       height: 220,
@@ -104,8 +110,8 @@ import scrollTrigger from "gsap/scrollTrigger";
           trigger: "#Progress",
           markers: false,
           scrub: false,
-          start: 'center bottom',
-          end: 'center top',
+          start: startPoint_1,
+          end: endPoint_1,
           toggleActions: "play none none none"
         } ,
         duration: 0.3,
@@ -117,8 +123,8 @@ import scrollTrigger from "gsap/scrollTrigger";
         pin: true,
         markers: false,
         scrub: false,
-        start: '40% center',
-        end: '40%  top',
+        start: startPoint_2,
+        end: endPoint_2,
         toggleActions: "play none none none"
       },
       height: 420,
@@ -129,8 +135,8 @@ import scrollTrigger from "gsap/scrollTrigger";
         trigger: "#Progress",
         markers: false,
         scrub: false,
-        start: '40% center',
-        end: '40%  top',
+        start: startPoint_2,
+        end: endPoint_2,
         toggleActions: "play none none none"
       },
       top: 420
@@ -141,8 +147,8 @@ import scrollTrigger from "gsap/scrollTrigger";
         pin: true,
         markers: false,
         scrub: false,
-        start: '15% 15%',
-        end: '15% top',
+        start: startPoint_3,
+        end: endPoint_3,
         toggleActions: "play none none none"
       },
       height: 620,
@@ -154,8 +160,8 @@ import scrollTrigger from "gsap/scrollTrigger";
         trigger: "#Progress",
         markers: false,
         scrub: false,
-        start: '15% 15%',
-        end: '15% top',
+        start: startPoint_3,
+        end: endPoint_3,
         toggleActions: "play none none none"
       },
       top: 620
