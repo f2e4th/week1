@@ -86,7 +86,7 @@ import scrollTrigger from "gsap/scrollTrigger";
     gsap.registerPlugin(scrollTrigger);
     const timeline = gsap.timeline();
     const startPoint_1 = 'center bottom',
-    endPoint_1 = 'center top',
+    endPoint_1 = 'center center',
     startPoint_2 = '40% center',
     endPoint_2 = '40% top',
     startPoint_3 = '15% 15%',
@@ -95,7 +95,10 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: false,
-        markers: false,
+        markers: {
+          startColor: 'pink',
+          endColor: 'purple'
+        },
         scrub: false,
         start: startPoint_1,
         end: endPoint_1,
@@ -121,7 +124,7 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: true,
-        markers: false,
+        markers: true,
         scrub: false,
         start: startPoint_2,
         end: endPoint_2,
