@@ -96,10 +96,10 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: false,
-        markers: {
-          startColor: 'pink',
-          endColor: 'purple'
-        },
+        // markers: {
+        //   startColor: 'pink',
+        //   endColor: 'purple'
+        // },
         scrub: false,
         start: startPoint_1,
         end: endPoint_1,
@@ -125,7 +125,7 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: true,
-        markers: true,
+        markers: false,
         scrub: false,
         start: startPoint_2,
         end: endPoint_2,
@@ -149,10 +149,10 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: true,
-        markers: {
-          startColor: 'white',
-          endColor: 'black'
-        },
+        // markers: {
+        //   startColor: 'white',
+        //   endColor: 'black'
+        // },
         scrub: false,
         start: startPoint_3,
         end: endPoint_3,
