@@ -292,9 +292,7 @@ $mobildSize: 700px;
 }
 .currentPositionContainer {
   @apply absolute z-10;
-    // top: 60px;
     top:20px;
-    // top: 120px;
     transform: translateY(-60px);
     transition: all .3s;
   #currentPosition {
@@ -325,10 +323,4 @@ $mobildSize: 700px;
     }
   }
 }
-.timeline--dark__container,
-.timeline--bright__container {
-  // padding-top: 100px;
-  // margin-top: -100px;
-}
-
 </style>

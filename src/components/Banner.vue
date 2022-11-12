@@ -13,8 +13,6 @@
         </svg>
         <img id="starSvg" :src="starSvg" alt="star">
         <img :src="treeSvgConbin" id="treeSvg" alt="tree">
-        <!-- <treeSvgConbin class="absolute top-0"/> -->
-        <!-- <div id="maskTree" class="w-full"></div> -->
     </div>
   </div>
 </template>
@@ -25,7 +23,6 @@ import treeSvg from '../assets/svg/img_tree_blue_big.svg'
 import starSvg from '../assets/svg/img_star_blue_big.png'
 import peopleSvg from '../assets/svg/img_RD&UI_big.svg'
 import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
-// import treeSvgConbin from '../components/Tree.vue';
 
 </script>
 
@@ -33,11 +30,6 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
     onMounted( ()=>{
         gsapInit();
     })
-
-    const circyleY =  ref('0');
-    const peopleLeft = ref(0);
-    const treeBottem = ref(0);
-
 // methods
     function gsapInit(){
         const timeline = gsap.timeline();
@@ -119,7 +111,6 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
 #treeSvg {
     @apply absolute bottom-0 z-10 w-full;
     fill:#061C31;
-    // max-width: 1000px;
 }
 #peopleSvg {
     @apply absolute bottom-96;
@@ -137,13 +128,6 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
     line-height: 57px;
     font-size: 24px;
 }
-// #maskTree {
-//     @apply absolute top-0 w-full z-20 h-full;
-//     background: url("../assets/svg/img_tree_UIRD.svg") no-repeat top center;
-//     background-size: cover;
-//     -webkit-mask: url("../assets/svg/img_tree_UIRD.svg") no-repeat center center;
-//     mask: url("../assets/svg/img_tree_UIRD.svg") no-repeat center center;
-// }
 .banner-svg--back  {
     background: #1F0812;
 }
