@@ -3,17 +3,9 @@
     <div id="Subjects">
 
       <div class="title_layout">
-        <div class="title  title_3">
-          <h1>WEEK 3</h1>
-          <h2>Scrum 新手村</h2>
-        </div>
-        <div class="title  title_2">
-          <h1>WEEK 2</h1>
-          <h2>今晚，我想來點點簽</h2>
-        </div>
-        <div class="title title_1">
-          <h1>WEEK 1</h1>
-          <h2>The F2E 活動網站設計</h2>
+        <div v-for="(item, i) in sections" :key="i" class="title" :class="`title_${item.id}`">
+          <h1>{{item.title}}</h1>
+          <h2>{{item.title2}}</h2>
         </div>
       </div>
 
@@ -36,7 +28,7 @@
     </div>
 </template>
 <script>
-import { ref, reactive, onMounted, computed, watch } from "vue";
+import { ref, reactive, onMounted } from "vue";
 import gsap from "gsap";
 import scrollTrigger from "gsap/scrollTrigger";
 import img_week1_big from '../assets/img/img_week1_big.png';
