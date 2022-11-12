@@ -108,7 +108,8 @@ import scrollTrigger from "gsap/scrollTrigger";
         start: 'top bottom',
         end: 'bottom bottom'
       },
-      top: (card_data.length-1)*205+5+100>=620?620:(card_data.length-1)*205+5+100
+      // top: (card_data.length-1)*205+5+100>=620?620:(card_data.length-1)*205+5+100
+      top: 220
       },"<");
     timeline.to(".timeline--bright__container", {
       scrollTrigger: {
@@ -118,21 +119,31 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: '40% center',
         end: 'center top',
-        toggleActions: "play none  none none"
+        toggleActions: "play pause  pause pause"
       },
       height: 420,
       duration: 0.3
       // height: (card_data.length-1)*205+5+100
     });
+    timeline.to(".currentPositionContainer", {
+      scrollTrigger: {
+        trigger: "#Progress",
+        markers: false,
+        scrub: true,
+        start: 'top bottom',
+        end: 'bottom bottom'
+      },
+      top: (card_data.length-1)*205+5+100>=620?620:(card_data.length-1)*205+5+100
+      },"<");
     timeline.to(".timeline--bright__container", {
       scrollTrigger: {
         trigger: "#Progress",
         pin: true,
-        markers: true,
+        markers: false,
         scrub: false,
         start: '15% 15%',
         end: '40% top',
-        toggleActions: "play none  none none"
+        toggleActions: "play pause  pause pause"
       },
       height: 620,
       duration: 0.3
@@ -273,6 +284,7 @@ $mobildSize: 700px;
     top:20px;
     // top: 120px;
     transform: translateY(-60px);
+    transition: all .3s;
   #currentPosition {
     @apply relative;
     width: 100px;
