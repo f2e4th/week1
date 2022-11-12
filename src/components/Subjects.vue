@@ -32,17 +32,9 @@
       </div>
 
       <div class="footer_layout">
-        <div class="footer footer_3">
-          <h3 class="title">JS draggable</h3>
-          <h4 class="subtitle">#鈦坦科技</h4>
-        </div>
-        <div class="footer footer_2">
-          <h3 class="title">Canvas</h3>
-          <h4 class="subtitle">#凱鈿行動科技</h4>
-        </div>
-        <div class="footer footer_1">
-          <h3 class="title">視差滾動</h3>
-          <h4 class="subtitle">#板塊設計</h4>
+        <div  v-for="(item, i) in sections" :key="i" class="footer" :class="`footer_${item.id}`">
+          <h3 class="title">{{item.footer_title}}</h3>
+          <h4 class="subtitle">#{{item.footer_subtitle}}</h4>
         </div>
       </div>
 
@@ -53,17 +45,43 @@
 import { ref, reactive, onMounted, computed, watch } from "vue";
 import gsap from "gsap";
 import scrollTrigger from "gsap/scrollTrigger";
+import img_week1_big from '../assets/img/img_week1_big.png';
+import img_week2_big from '../assets/img/img_week2_big.png';
+import img_week3_big from '../assets/img/img_week3_big.png';
 </script>
 
 <script setup>
 onMounted(() => {
   gsapInit();
 });
-const imgs = reactive([
-  "../assets/img/img_week3_big.png",
-  "../assets/img/img_week2_big.png",
-  "../assets/img/img_week1_big.png",
-]);
+const sections = reactive(
+  [
+    {
+      title:'WEEK 3',
+      title2:'Scrum 新手村',
+      img: img_week3_big,
+      footer_title: 'JS draggable',
+      footer_subtitle: '鈦坦科技',
+      id: 3
+    },
+    {
+      title:'WEEK 2',
+      title2:'今晚，我想來點點簽',
+      img: img_week2_big,
+      footer_title: 'Canvas',
+      footer_subtitle: '凱鈿行動科技',
+      id: 2
+    },
+    {
+      title:'WEEK 1',
+      title2:'The F2E 活動網站設計',
+      img: img_week1_big,
+      footer_title: '視差滾動',
+      footer_subtitle: '板塊設計',
+      id:1
+    },
+  ]
+)
 function gsapInit() {
   gsap.registerPlugin(scrollTrigger);
   const timeline = gsap.timeline();
