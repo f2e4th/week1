@@ -86,11 +86,11 @@ import scrollTrigger from "gsap/scrollTrigger";
     gsap.registerPlugin(scrollTrigger);
     const timeline = gsap.timeline();
     const startPoint_1 = 'center bottom',
-    endPoint_1 = 'center center',
-    startPoint_2 = '40% center',
-    endPoint_2 = '40% top',
-    startPoint_3 = '15% 15%',
-    endPoint_3 = '15% top',
+    endPoint_1 = 'center 66%',
+    startPoint_2 = 'center 66%',
+    endPoint_2 = 'center 50%',
+    startPoint_3 = 'center 50%',
+    endPoint_3 = 'center top',
     allToggleActions = "play none none none",
     lineAni_1 = {
       scrollTrigger: {
