@@ -91,6 +91,7 @@ import scrollTrigger from "gsap/scrollTrigger";
     endPoint_2 = '40% top',
     startPoint_3 = '15% 15%',
     endPoint_3 = '15% top',
+    allToggleActions = "play none none none",
     lineAni_1 = {
       scrollTrigger: {
         trigger: "#Progress",
@@ -102,7 +103,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: startPoint_1,
         end: endPoint_1,
-        toggleActions: "play none none none"
+        toggleActions: allToggleActions
       },
       height: 220,
       duration: 0.3
@@ -115,7 +116,7 @@ import scrollTrigger from "gsap/scrollTrigger";
           scrub: false,
           start: startPoint_1,
           end: endPoint_1,
-          toggleActions: "play none none none"
+          toggleActions: allToggleActions
         } ,
         duration: 0.3,
         top: 220,
@@ -128,7 +129,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: startPoint_2,
         end: endPoint_2,
-        toggleActions: "play none none none"
+        toggleActions: allToggleActions
       },
       height: 420,
       duration: 0.3
@@ -140,7 +141,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: startPoint_2,
         end: endPoint_2,
-        toggleActions: "play none none none"
+        toggleActions: allToggleActions
       },
       top: 420
     },
@@ -148,11 +149,14 @@ import scrollTrigger from "gsap/scrollTrigger";
       scrollTrigger: {
         trigger: "#Progress",
         pin: true,
-        markers: false,
+        markers: {
+          startColor: 'white',
+          endColor: 'black'
+        },
         scrub: false,
         start: startPoint_3,
         end: endPoint_3,
-        toggleActions: "play none none none"
+        toggleActions: allToggleActions
       },
       height: 620,
       duration: 0.3
@@ -165,7 +169,7 @@ import scrollTrigger from "gsap/scrollTrigger";
         scrub: false,
         start: startPoint_3,
         end: endPoint_3,
-        toggleActions: "play none none none"
+        toggleActions: allToggleActions
       },
       top: 620
       }
