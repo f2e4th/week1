@@ -85,22 +85,21 @@ import scrollTrigger from "gsap/scrollTrigger";
   function gsapInit(){
     gsap.registerPlugin(scrollTrigger);
     const timeline = gsap.timeline();
-    // 
-    timeline.to(".timeline--bright__container", {
+    const lineAni_1 = {
       scrollTrigger: {
         trigger: "#Progress",
-        pin: false, // 要postion fixed 的時候 pin需要設為true,
+        pin: false,
         markers: false,
         scrub: false,
         start: 'center bottom',
         end: 'center top',
-        toggleActions: "play none reset none"
+        toggleActions: "play none none none"
       },
       height: 220,
       duration: 0.3
       // height: (card_data.length-1)*205+5+100
-    });
-    timeline.to(".currentPositionContainer", {
+    },
+    pointAni_1 = {
       scrollTrigger: {
           trigger: "#Progress",
           markers: false,
@@ -111,7 +110,10 @@ import scrollTrigger from "gsap/scrollTrigger";
         } ,
         duration: 0.3,
         top: 220,
-      },"<");
+    }
+
+    timeline.to(".timeline--bright__container", lineAni_1);
+    timeline.to(".currentPositionContainer", pointAni_1,"<");
     timeline.to(".timeline--bright__container", {
       scrollTrigger: {
         trigger: "#Progress",
