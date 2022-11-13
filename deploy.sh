@@ -22,6 +22,6 @@ git commit -m 'deploy'
 # 部署到 https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git gh-pages
 
-git push -u https://github.com/f2e4th/week1.git gh-pages
+git push -f https://github.com/f2e4th/week1.git gh-pages
 
 cd -
