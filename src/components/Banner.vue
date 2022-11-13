@@ -72,6 +72,7 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
 #Banner {
     @apply relative  w-full mx-auto my-0 overflow-y-hidden;
     height: 1024px;
+    max-width: 1440px;
     @media screen and (max-width: 1024px) {
         height: 80%;
     }

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Banner/>
+  <div id="homepage">
+    <!-- <Banner/> -->
     <breakQuestion/>
     <Subjects/>
     <Progress/>
@@ -13,12 +13,9 @@
 </template>
 
 <style scoped lang="scss">
-.title { 
-  color: red;
-}
 </style>
 <script>
-import Banner from '../components/Banner.vue';
+// import Banner from '../components/Banner.vue';
 import Subjects from '../components/Subjects.vue'
 import Progress from '../components/Progress.vue';
 import breakQuestion from '../components/breakQestion.vue';
@@ -31,7 +28,7 @@ export default{
     
   },
   components: {
-    Banner,
+    // Banner,
     Subjects,
     Progress,
     breakQuestion,
