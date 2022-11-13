@@ -20,6 +20,7 @@
     height: 1024px;
     z-index: 0;
     .ellipse{
+        opacity: 0.3;
         @include media-lg{
             // width: 90%;
         }
@@ -38,6 +39,9 @@
         @include media-lg{
             margin-top: 680px;
         }
+        @include media-sm{
+            background-size: 60%;
+        }
     }
     .text-content{
         position: absolute;
@@ -47,6 +51,9 @@
         font-style: normal;
         font-weight: 500;
         font-size: 20px;
+        p{
+            font-size: 16px;
+        }
         @include media-lg{
             font-size: 18px;
         }

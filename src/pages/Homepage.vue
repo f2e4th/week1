@@ -4,6 +4,7 @@
     <breakQuestion/>
     <awardDesign/>
     <awardOther/>
+    <questionSection/>
   </div>
 </template>
 
@@ -16,13 +17,15 @@
 import breakQuestion from '../components/breakQestion.vue';
 import awardDesign from '../components/awardDesign.vue';
 import awardOther from '../components/awardOther.vue';
-import AwardOther from '../components/awardOther.vue';
+import questionSection from '../components/questionSection.vue'
+import QuestionSection from '../components/questionSection.vue';
 
 export default{
   components:{
     breakQuestion,
     awardDesign,
-    AwardOther
+    awardOther,
+    QuestionSection
   },
   setup() {
     

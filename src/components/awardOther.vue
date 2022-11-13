@@ -1,17 +1,19 @@
 <template>
-    <div class="container_award w-full flex justify-center items-center flex-col">
-        <!-- <div class="text-white text-content-title text-section text-section-first">
-            區區修煉已經無法滿足了嗎？<br>
-            還有比賽等著你！
-        </div> -->
+    <div class="container_award w-full flex justify-center items-center flex-col text-section-second">
         <img class="ellipse" src="../assets/images/ellipse.png"/>
         <div class="text-white text-content text-section">
             <div class="text-content-title mb-9 mt-4">獎項</div>
-            <div class="mb-5 text-content-inner">
-                初選：將由六角學院前端、UI 評審<br>進行第一波篩選，並於 12/5（五）<br>公布初選佳作名單
+            <div class="mb-3 text-content-inner">
+                初選佳作 共六十位 數位獎狀<br><p>每週主題個人組十位、團體組十組</p>
+            </div>
+            <div class="text-content-inner mb-3">
+                個人企業獎 共六位 NTD 3,000/位<br><p>每週主題各 2 名，設計 1 位、前端 1 位</p>
+            </div>
+            <div class="text-content-inner mb-3">
+                團體企業獎 共三組 NTD 10,000/組<br><p>每週主題各 1 組</p>
             </div>
             <div class="text-content-inner">
-                決選：由三大企業針對該企業主題<br>進行入圍獎最後篩選，並於<br>12/23（五）公布企業得獎名單
+                以上皆提供完賽數位獎狀
             </div>
         </div>
         <div class="treasure_all treasure_point"></div>
@@ -54,7 +56,7 @@ export default {
     function hide() {
         const tl = gsap.timeline({
         scrollTrigger:{
-            trigger:'.text-section-first',
+            trigger:'.text-section-second',
             markers:true
           }
         })
