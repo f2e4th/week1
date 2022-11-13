@@ -1,12 +1,12 @@
 <template>
   <div>
     <Banner/>
-    <breakQuestion/>
+    <BreakSection/>
     <Subjects/>
     <Progress/>
-    <awardDesign/>
-    <awardOther/>
-    <questionSection/>
+    <AwardDesigns/>
+    <AwardOthers/>
+    <QuestionSections/>
   </div>
 </template>
 
@@ -19,10 +19,10 @@
 import Banner from '../components/Banner.vue';
 import Subjects from '../components/Subjects.vue'
 import Progress from '../components/Progress.vue';
-import breakQuestion from '../components/breakQestion.vue';
-import awardDesign from '../components/awardDesign.vue';
-import awardOther from '../components/awardOther.vue';
-import questionSection from '../components/questionSection.vue'
+import BreakSection from '../components/BreakSection.vue';
+import AwardDesigns from '../components/AwardDesigns.vue';
+import AwardOthers from '../components/AwardOthers.vue';
+import QuestionSections from '../components/QuestionSections.vue'
 
 export default{
   setup() {
@@ -32,10 +32,10 @@ export default{
     Banner,
     Subjects,
     Progress,
-    breakQuestion,
-    awardDesign,
-    awardOther,
-    questionSection
+    BreakSection,
+    AwardDesigns,
+    AwardOthers,
+    QuestionSections
   }
 }
 </script>

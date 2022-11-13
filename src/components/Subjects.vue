@@ -30,7 +30,7 @@
 <script>
 import { ref, reactive, onMounted } from "vue";
 import gsap from "gsap";
-import scrollTrigger from "gsap/scrollTrigger";
+import scrollTrigger from "gsap/ScrollTrigger";
 import img_week1_big from '../assets/img/img_week1_big.png';
 import img_week2_big from '../assets/img/img_week2_big.png';
 import img_week3_big from '../assets/img/img_week3_big.png';

@@ -52,7 +52,7 @@ import progress_2 from '../assets/img/progress_2.png';
 import progress_3 from '../assets/img/progress_3.png';
 import progress_4 from '../assets/img/progress_4.png';
 import gsap from "gsap";
-import scrollTrigger from "gsap/scrollTrigger";
+import scrollTrigger from "gsap/ScrollTrigger";
 </script>
 <script setup>
   const card_data = reactive([
