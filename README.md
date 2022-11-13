@@ -1,8 +1,8 @@
-＃ 作品說明
+# 作品說明
 
   - F2E 第四屆官網
 
-＃ 系統說明:
+# 系統說明
   - node 14.17.6 ( 建議14以上，可安裝nvm切換)
   - npm 6.13.15 ( 建議6以上 )
   
@@ -10,11 +10,11 @@
   - vue3 + vite
   - gsap 套件
   
-＃ 資料夾說明
+# 資料夾說明
   
   https://hackmd.io/y4Zys2yBTIC2sOX-rZxneQ?view
   
-＃ 其他
+# 其他
 
 git 協作規則:
 - 請各位從develop 開分支開發，好了以後合回去develop, 當周值日生確認沒問題後再merge 回 main (讓各位都有滿滿一整周主持專案的體驗)
