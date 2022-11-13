@@ -1,15 +1,15 @@
 <template>
   <div id="homepage">
     <!-- <Banner/> -->
+    <askQuestion></askQuestion>
     <BreakSection/>
     <Subjects/>
     <Progress/>
     <AwardDesigns/>
     <AwardOthers/>
+    <sponsor/>
     <QuestionSections/>
   </div>
-  <askQuestion></askQuestion>
-  <sponsor/>
 </template>
 
 <style scoped lang="scss">
@@ -22,6 +22,8 @@ import BreakSection from '../components/BreakSection.vue';
 import AwardDesigns from '../components/AwardDesigns.vue';
 import AwardOthers from '../components/AwardOthers.vue';
 import QuestionSections from '../components/QuestionSections.vue'
+import sponsor from '../components/sponsor.vue';
+import askQuestion from '../components/askQuestion.vue'
 
 export default{
   setup() {
@@ -34,7 +36,9 @@ export default{
     BreakSection,
     AwardDesigns,
     AwardOthers,
-    QuestionSections
+    QuestionSections,
+    sponsor,
+    askQuestion
   }
 }
 </script>
