@@ -1,10 +1,22 @@
-f2e4th week1
+＃ 作品說明
 
-1. 環境版本要求:
+  - F2E 第四屆官網
+
+＃ 系統說明:
   - node 14.17.6 ( 建議14以上，可安裝nvm切換)
   - npm 6.13.15 ( 建議6以上 )
+  
+# 使用技術
+  - vue3 + vite
+  - gsap 套件
+  
+＃ 資料夾說明
+  
+  https://hackmd.io/y4Zys2yBTIC2sOX-rZxneQ?view
+  
+＃ 其他
 
-2. git 協作規則:
+git 協作規則:
 - 請各位從develop 開分支開發，好了以後合回去develop, 當周值日生確認沒問題後再merge 回 main (讓各位都有滿滿一整周主持專案的體驗)
 
 3. 樣式可依照 OOCSS（Object Oriented CSS) ，這部份盡量均循即可，以自己有練習到為主
