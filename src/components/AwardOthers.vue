@@ -151,7 +151,7 @@ export default {
         const tl = gsap.timeline({
             scrollTrigger:{
                 trigger:'.treasure_point',
-                markers:fasle
+                markers:false
             }
         });
 
