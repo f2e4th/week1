@@ -1,7 +1,7 @@
 <template>
   <div id="homepage">
     <!-- <Banner/> -->
-    <breakQuestion/>
+    <BreakSection/>
     <Subjects/>
     <Progress/>
     <AwardDesigns/>
