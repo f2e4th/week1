@@ -2,7 +2,7 @@
   <div>
     <!-- <h1 class="title">This is Homepage.</h1> -->
   </div>
-  <!-- <askQuestion></askQuestion> -->
+  <askQuestion></askQuestion>
   <sponsor/>
 </template>
 
