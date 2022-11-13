@@ -8,10 +8,12 @@
     <awardOther/>
     <questionSection/>
   </div>
+  <askQuestion></askQuestion>
+  <sponsor/>
 </template>
 
 <style scoped lang="scss">
-.title {
+.title { 
   color: red;
 }
 </style>
