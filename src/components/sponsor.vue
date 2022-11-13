@@ -41,7 +41,7 @@
 
 <script>
 // import gsap from 'gsap';
-// import scrollTrigger from 'gsap/ScrollTrigger'
+import scrollTrigger from 'gsap/scrollTrigger'
 import { onMounted } from '@vue/runtime-core';
 
 export default {
