@@ -7,11 +7,11 @@
     希望大家都能打敗難搞的魔王~~
 
 # 系統說明
-  npm install
-  npm run dev
+  -npm install
+  -npm run dev
 
-  node 14.17.6 ( 建議14以上，可安裝nvm切換)
-  npm 6.13.15 ( 建議6以上 )
+  -node 14.17.6 ( 建議14以上，可安裝nvm切換)
+  -npm 6.13.15 ( 建議6以上 )
   
 # 使用技術
   - vue3 + vite
