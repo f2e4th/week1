@@ -13,6 +13,7 @@
 # 使用技術
   - vue3 + vite
   - gsap 套件
+  - tailwind
   
 # 資料夾說明
   
