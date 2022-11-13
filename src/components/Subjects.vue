@@ -259,6 +259,7 @@ $mobile_img_size: 360px;
     font-weight: 500;
     font-size: 40px;
     line-height: 60px;
+    color:$text_color;
   }
 }
 .img_layout {
@@ -301,6 +302,7 @@ $mobile_img_size: 360px;
     @apply  w-full absolute top-10 overflow-hidden;
     font-weight: 500;
     background: $main_bg;
+    color: $text_color;
     .title {
       font-size: 32px;
       line-height: 46.34px;

@@ -1,7 +1,7 @@
 <template>
   <div id="Banner">
       <div class="banner-svg banner-svg--back">
-        <div class="banner-title">
+        <div class="banner-title" style="color:rgba(255,255,255,0.9)">
             <h1>The F2E 4TH</h1>
             <h2 class="sub-title">互動式網頁設計</h2>
         </div>
@@ -68,6 +68,7 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
 </script>
 
 <style scope lang='scss'>
+@import '../assets/scss/all.scss';
 #Banner {
     @apply relative  w-full mx-auto my-0 overflow-y-hidden;
     height: 1024px;
@@ -86,6 +87,7 @@ import treeSvgConbin from '../assets/svg/img_tree_UIRD.svg'
     text-shadow: 0 0.1em #333;
     opacity: 0;
     font-size: 40px;
+    color: $text_color;
 }
 .banner-svg {
     @apply w-full;

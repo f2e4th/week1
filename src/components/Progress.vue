@@ -194,6 +194,7 @@ $mobildSize: 700px;
   @apply py-10 px-4 relative;
   background-color: #061C31;
   height: 1024px;
+  color: $text_color;
 }
 
 .list_container {
