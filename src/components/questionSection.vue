@@ -1,7 +1,7 @@
 <template>
   <div class="text-white container_question">
     <div class="question-title mb-10">常見問答</div>
-    <div class="flex question-content">
+    <div class="flex question-content justify-center">
     <div class="tab-list">
         <ul class="tabs">
         <li
