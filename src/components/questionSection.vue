@@ -206,7 +206,7 @@ export default {
     },
     {
        question:'Q：前端介面一定要長得一模一樣嗎？',
-       answers: '不用，依照自己的想法來開發也可以',
+       answers: 'A:不用，依照自己的想法來開發也可以',
        id:"2"
     },{
        question:'Q：有現成的網頁靜態頁面嗎？我想只練習 JS / 後端就好',
@@ -214,7 +214,7 @@ export default {
        id:"3"
     },{
        question:'Q：那我只想要練習 JS，HTML/CSS 我用陽春版，不依照設計稿開發可以嗎？',
-       answers: '可以，你可以當做我們就是出一個主題，你依照那主題當作參考方向來開發即可。',
+       answers: 'A:可以，你可以當做我們就是出一個主題，你依照那主題當作參考方向來開發即可。',
        id:"4"
     }
     ],
@@ -237,7 +237,7 @@ export default {
        id:"4"
     },{
        question:'Q：團體組的 UI 設計稿，可以讓『個人組-前端工程師』組別採用嗎？',
-       answers: '不能，預設是不能讓『個人組-前端工程師』採用。',
+       answers: 'A:不能，預設是不能讓『個人組-前端工程師』採用。',
        id:"5"
     }
     ],
@@ -251,7 +251,6 @@ export default {
   watch:{
   },
   mounted() {
-    // tabs();
   },
   created() {
     this.tabs.forEach((x) => {

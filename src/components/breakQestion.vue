@@ -19,7 +19,7 @@ mounted(){
 
     
     ScrollTrigger.create({
-      markers: true,
+    markers: false,
 
 	 //向下滾動進入start點時觸發callback
       onEnter: function () {

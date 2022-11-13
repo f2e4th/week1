@@ -24,7 +24,6 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { TextPlugin } from 'gsap/TextPlugin';
 
 export default {
     data() {},
@@ -32,7 +31,7 @@ export default {
     gsap.registerPlugin(ScrollTrigger);
 
     ScrollTrigger.create({
-      markers: true,
+     markers: false,
 
 	 //向下滾動進入start點時觸發callback
       onEnter: function () {
@@ -55,7 +54,7 @@ export default {
         const tl = gsap.timeline({
         scrollTrigger:{
             trigger:'.text-section-first',
-            markers:true
+            markers:false
           }
         })
 
@@ -150,7 +149,7 @@ export default {
         const tl = gsap.timeline({
             scrollTrigger:{
                 trigger:'.treasure_all',
-                markers:true
+                markers:false
             }
         });
 

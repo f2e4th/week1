@@ -33,7 +33,7 @@ export default {
     gsap.registerPlugin(ScrollTrigger);
 
     ScrollTrigger.create({
-      markers: true,
+     markers: false,
 
 	 //向下滾動進入start點時觸發callback
       onEnter: function () {
@@ -56,7 +56,7 @@ export default {
         const tl = gsap.timeline({
         scrollTrigger:{
             trigger:'.text-section-second',
-            markers:true
+            markers:false
           }
         })
 
@@ -151,7 +151,7 @@ export default {
         const tl = gsap.timeline({
             scrollTrigger:{
                 trigger:'.treasure_point',
-                markers:true
+                markers:fasle
             }
         });
 
