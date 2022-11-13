@@ -1,8 +1,12 @@
 <template>
   <div>
     <Banner/>
+    <breakQuestion/>
     <Subjects/>
     <Progress/>
+    <awardDesign/>
+    <awardOther/>
+    <questionSection/>
   </div>
 </template>
 
@@ -15,6 +19,11 @@
 import Banner from '../components/Banner.vue';
 import Subjects from '../components/Subjects.vue'
 import Progress from '../components/Progress.vue';
+import breakQuestion from '../components/breakQestion.vue';
+import awardDesign from '../components/awardDesign.vue';
+import awardOther from '../components/awardOther.vue';
+import questionSection from '../components/questionSection.vue'
+
 export default{
   setup() {
     
@@ -22,7 +31,11 @@ export default{
   components: {
     Banner,
     Subjects,
-    Progress
+    Progress,
+    breakQuestion,
+    awardDesign,
+    awardOther,
+    questionSection
   }
 }
 </script>
