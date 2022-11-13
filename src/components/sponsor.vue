@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import gsap from 'gsap';
-import scrollTrigger from 'gsap/ScrollTrigger'
+// import gsap from 'gsap';
+// import scrollTrigger from 'gsap/ScrollTrigger'
 import { onMounted } from '@vue/runtime-core';
 
 export default {
