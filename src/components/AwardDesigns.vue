@@ -14,6 +14,7 @@
                 決選：由三大企業針對該企業主題<br>進行入圍獎最後篩選，並於<br>12/23（五）公布企業得獎名單
             </div>
         </div>
+        <div class="treasure_test"></div>
         <div class="treasure_all"></div>
         <img class="diamond_red" src="../assets/images/diamond_red.png"/>
         <img class="diamond_red2" src="../assets/images/diamond_red2.png"/>
@@ -24,9 +25,6 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/scrollTrigger';
-import treasure1 from '../assets/images/treasure_close.png';
-import treasure2 from '../assets/images/treasure_halfopen.png'
-import treasure3 from '../assets/images/treasure_open.png';
 
 export default {
     data() {},
@@ -65,7 +63,8 @@ export default {
         gsap.set('.diamond_red', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_red2', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_green', { opacity: 0, visibility: "hidden" });
-        tl.to('.treasure_all', 1, {backgroundImage:'url(../assets//images/treasure_close.png)'
+
+        tl.to('.treasure_all', 1, {backgroundImage:'url(../assets/images/treasure_close.png)'
         })
     }
 
@@ -167,3 +166,14 @@ export default {
     }
 }
 </script>
+
+<style scoped lang="scss">
+.treasure_test{
+    background-repeat: no-repeat !important;
+    opacity: 1;
+    background-image: url('../assets/images/treasure_close.png');
+    width: 300px;
+    height: 500px;
+}
+
+</style>
