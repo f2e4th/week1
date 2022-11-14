@@ -3,7 +3,6 @@
         <div class="text-white text-content-title text-section text-section-first">
             區區修煉已經無法滿足了嗎？<br>
             還有比賽等著你！
-            <img :src="bgimg" alt="">
         </div>
         <img class="ellipse" src="../assets/images/ellipse.png"/>
         <div class="text-white text-content text-section">
