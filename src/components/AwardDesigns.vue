@@ -14,7 +14,9 @@
                 決選：由三大企業針對該企業主題<br>進行入圍獎最後篩選，並於<br>12/23（五）公布企業得獎名單
             </div>
         </div>
-        <div class="treasure_all"></div>
+        <div class="treasure_all">
+            <img :src="bgimg" alt="">
+        </div>
         <img class="diamond_red" src="../assets/images/diamond_red.png"/>
         <img class="diamond_red2" src="../assets/images/diamond_red2.png"/>
         <img class="diamond_green" src="../assets/images/diamond_green.png"/>
