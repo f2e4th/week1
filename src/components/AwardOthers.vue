@@ -155,9 +155,9 @@ export default {
             }
         });
 
-        tl.to('.treasure_all', 1, {background:'url(../../../../src/assets/images/treasure_close.png)'
-        }).to('.treasure_all', 1.2, {background:'url(../../../../src/assets/images/treasure_halfopen.png)'
-        }).to('.treasure_all', 1.5, {background:'url(../../../../src/assets/images/treasure_open.png)'}) 
+        tl.to('.treasure_all', 1, {backgroundImage:'url(../src/assets/images/treasure_close.png)'
+        }).to('.treasure_all', 1.2, {backgroundImage:'url(../src/assets/images/treasure_halfopen.png)'
+        }).to('.treasure_all', 1.5, {backgroundImage:'url(../src/assets/images/treasure_open.png)'}) 
       }
 
       
