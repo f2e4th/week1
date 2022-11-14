@@ -14,9 +14,7 @@
                 決選：由三大企業針對該企業主題<br>進行入圍獎最後篩選，並於<br>12/23（五）公布企業得獎名單
             </div>
         </div>
-        <div class="treasure_all">
-            <img :src="treasureImg"/>
-        </div>
+        <div class="treasure_all"></div>
         <img class="diamond_red" src="../assets/images/diamond_red.png"/>
         <img class="diamond_red2" src="../assets/images/diamond_red2.png"/>
         <img class="diamond_green" src="../assets/images/diamond_green.png"/>
@@ -29,9 +27,6 @@ import { ScrollTrigger } from 'gsap/scrollTrigger';
 
 export default {
     data() {
-        return {
-            treasureImg: ''
-        }
     },
     mounted(){
     gsap.registerPlugin(ScrollTrigger);
@@ -69,10 +64,6 @@ export default {
         gsap.set('.diamond_red2', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_green', { opacity: 0, visibility: "hidden" });
         tl.to('.treasure_all', 1, {backgroundImage:'url(../../../../src/assets/images/treasure_close.png)'
-        })
-
-        tl.add(function(){
-            this.treasureImg = bgimg;
         })
     }
 
