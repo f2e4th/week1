@@ -15,6 +15,7 @@
             </div>
         </div>
         <div class="treasure_all">
+            <img :src="treasureImg"/>
         </div>
         <img class="diamond_red" src="../assets/images/diamond_red.png"/>
         <img class="diamond_red2" src="../assets/images/diamond_red2.png"/>
@@ -31,7 +32,11 @@ import bgimg3 from '../assets/images/treasure_open.png'
 
 
 export default {
-    data() {},
+    data() {
+        return {
+            treasureImg: ''
+        }
+    },
     mounted(){
     gsap.registerPlugin(ScrollTrigger);
 
@@ -67,7 +72,11 @@ export default {
         gsap.set('.diamond_red', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_red2', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_green', { opacity: 0, visibility: "hidden" });
-        tl.to('.treasure_all', 1, {backgroundImage:bgimg
+        // tl.to('.treasure_all', 1, {backgroundImage:bgimg
+        // })
+
+        tl.add(function(){
+            this.treasureImg = bgimg;
         })
     }
 
@@ -159,8 +168,14 @@ export default {
         });
 
         tl.to('.treasure_all', 1, {backgroundImage:bgimg
+        }).add(function(){
+            this.treasureImg = bgimg;
         }).to('.treasure_all', 1.2, {backgroundImage:bgimg2
-        }).to('.treasure_all', 1.5, {backgroundImage:bgimg3}) 
+        }).add(function(){
+            this.treasureImg = bgimg2;
+        }).to('.treasure_all', 1.5, {backgroundImage:bgimg3}).add(function(){
+            this.treasureImg = bgimg3;
+        })
       }
 
       
