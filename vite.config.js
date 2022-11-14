@@ -4,5 +4,6 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   base:'./week1/dist/',
-  plugins: [vue()]
+  plugins: [vue()],
+  assetsRoot: path.resolve(__dirname, './dist')
 })
