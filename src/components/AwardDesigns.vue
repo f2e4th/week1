@@ -26,10 +26,6 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/scrollTrigger';
-import bgimg from '../assets/images/treasure_close.png'
-import bgimg2 from '../assets/images/treasure_halfopen.png'
-import bgimg3 from '../assets/images/treasure_open.png'
-
 
 export default {
     data() {
@@ -167,15 +163,9 @@ export default {
             }
         });
 
-        tl.to('.treasure_all', 1, {backgroundImage:bgimg
-        }).add(function(){
-            this.treasureImg = bgimg;
-        }).to('.treasure_all', 1.2, {backgroundImage:bgimg2
-        }).add(function(){
-            this.treasureImg = bgimg2;
-        }).to('.treasure_all', 1.5, {backgroundImage:bgimg3}).add(function(){
-            this.treasureImg = bgimg3;
-        })
+        tl.to('.treasure_all', 1, {backgroundImage:'url(../../../../src/assets/images/treasure_close.png)'
+        }).to('.treasure_all', 1.2, {backgroundImage:'url(../../../../src/assets/images/treasure_halfopen.png)'
+        }).to('.treasure_all', 1.5, {backgroundImage:'url(../../../../src/assets/images/treasure_open.png)'}) 
       }
 
       
