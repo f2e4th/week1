@@ -65,7 +65,7 @@ export default {
         gsap.set('.diamond_red', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_red2', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_green', { opacity: 0, visibility: "hidden" });
-        tl.to('.treasure_all', 1, {backgroundImage:bgimg
+        tl.to('.treasure_all', 1, {backgroundImage:require('../assets/images/treasure_close.png')
         })
     }
 
@@ -156,9 +156,9 @@ export default {
             }
         });
 
-        tl.to('.treasure_all', 1, {backgroundImage:bgimg
-        }).to('.treasure_all', 1.2, {backgroundImage:bgimg2
-        }).to('.treasure_all', 1.5, {backgroundImage:bgimg3}) 
+        tl.to('.treasure_all', 1, {backgroundImage:require('../assets/images/treasure_close.png')
+        }).to('.treasure_all', 1.2, {backgroundImage:require('../assets/images/treasure_halfopen.png')
+        }).to('.treasure_all', 1.5, {backgroundImage:require('../assets/images/treasure_open.png')}) 
       }
 
       
