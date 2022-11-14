@@ -24,6 +24,9 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/scrollTrigger';
+import treasure1 from '../assets/images/treasure_close.png';
+import treasure2 from '../assets/images/treasure_halfopen.png'
+import treasure3 from '../assets/images/treasure_open.png';
 
 export default {
     data() {},
