@@ -24,6 +24,9 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/scrollTrigger';
+import bgimg from '../assets/images/treasure_close.png'
+import bgimg2 from '../assets/images/treasure_halfopen.png'
+import bgimg3 from '../assets/images/treasure_open.png'
 
 export default {
     data() {},
