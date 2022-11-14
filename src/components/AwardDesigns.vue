@@ -52,20 +52,20 @@ export default {
     });
 
     function hide() {
-        const tl = gsap.timeline({
-        scrollTrigger:{
-            trigger:'.text-section-first',
-            markers:false
-          }
-        })
+        // const tl = gsap.timeline({
+        // scrollTrigger:{
+        //     trigger:'.text-section-first',
+        //     markers:false
+        //   }
+        // })
 
         gsap.set('.ellipse', { opacity: 0.3, visibility: "visible" });
         gsap.set('.diamond_red', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_red2', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_green', { opacity: 0, visibility: "hidden" });
 
-        tl.to('.treasure_all', 1, {backgroundImage:'url(../assets/images/treasure_close.png)'
-        })
+        // tl.to('.treasure_all', 1, {backgroundImage:'url(../assets/images/treasure_close.png)'
+        // })
     }
 
     function animated(){
@@ -155,9 +155,12 @@ export default {
             }
         });
 
-        tl.to('.treasure_all', 1, {backgroundImage:'url(../assets/images/treasure_close.png)'
-        }).to('.treasure_all', 1.2, {backgroundImage:'url(../assets/images/treasure_halfopen.png)'
-        }).to('.treasure_all', 1.5, {backgroundImage:'url(../assets/images/treasure_open.png)'}) 
+
+        // tl.to('.treasure_all', 1, {backgroundImage:'url(../assets/images/treasure_close.png)'
+        // }).to('.treasure_all', 1.2, {backgroundImage:'url(../assets/images/treasure_halfopen.png)'
+        // }).to('.treasure_all', 1.5, {backgroundImage:'url(../assets/images/treasure_open.png)'}) 
+        // tl.to('.treasure_test', 1, { opacity: 1,
+        // })
       }
 
 
@@ -174,6 +177,19 @@ export default {
     background-image: url('../assets/images/treasure_close.png');
     width: 300px;
     height: 500px;
+    animation-name: treasures;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    position:absolute;
+    margin-top: 780px;
+}
+
+@keyframes treasures {
+    50% { background-image: url('../assets/images/treasure_close.png'); }
+    75%{  background-image: url('../assets/images/treasure_halfopen.png'); }
+    100%{ background-image: url('../assets/images/treasure_open.png');}
+    
+
 }
 
 </style>

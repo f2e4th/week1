@@ -16,6 +16,7 @@
                 以上皆提供完賽數位獎狀
             </div>
         </div>
+        <div class="treasure_test"></div>
         <div class="treasure_all treasure_point"></div>
         <img class="diamond_red" src="../assets/images/diamond_red.png"/>
         <img class="diamond_red2" src="../assets/images/diamond_red2.png"/>
@@ -53,19 +54,20 @@ export default {
     });
 
     function hide() {
-        const tl = gsap.timeline({
-        scrollTrigger:{
-            trigger:'.text-section-second',
-            markers:false
-          }
-        })
+        // const tl = gsap.timeline({
+        // scrollTrigger:{
+        //     trigger:'.text-section-second',
+        //     markers:false
+        //   }
+        // })
 
         gsap.set('.ellipse', { opacity: 0.3, visibility: "visible" });
         gsap.set('.diamond_red', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_red2', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_green', { opacity: 0, visibility: "hidden" });
-        tl.to('.treasure_all', 1, {backgroundImage:'url(../assets//images/treasure_close.png)'
-        })
+
+        // tl.to('.treasure_all', 1, {backgroundImage:'url(../../../../src/assets/images/treasure_close.png)'
+        // })
     }
 
     function animated(){
@@ -155,9 +157,9 @@ export default {
             }
         });
 
-        tl.to('.treasure_all', 1, {backgroundImage:'url(../assets//images/treasure_close.png)'
-        }).to('.treasure_all', 1.2, {backgroundImage:'url(../assets/images/treasure_halfopen.png)'
-        }).to('.treasure_all', 1.5, {backgroundImage:'url(../assets/images/treasure_open.png)'}) 
+        // tl.to('.treasure_all', 1, {backgroundImage:'url(../assets//images/treasure_close.png)'
+        // }).to('.treasure_all', 1.2, {backgroundImage:'url(../assets/images/treasure_halfopen.png)'
+        // }).to('.treasure_all', 1.5, {backgroundImage:'url(../assets/images/treasure_open.png)'}) 
       }
 
 
@@ -166,3 +168,26 @@ export default {
     }
 }
 </script>
+
+<style scoped lang="scss">
+.treasure_test{
+    background-repeat: no-repeat !important;
+    opacity: 1;
+    background-image: url('../assets/images/treasure_close.png');
+    width: 300px;
+    height: 500px;
+    animation-name: treasures;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    position:absolute;
+    margin-top: 780px;
+}
+
+@keyframes treasures {
+    50% { background-image: url('../assets/images/treasure_close.png'); }
+    75%{  background-image: url('../assets/images/treasure_halfopen.png'); }
+    100%{ background-image: url('../assets/images/treasure_open.png');}
+    
+}
+
+</style>
