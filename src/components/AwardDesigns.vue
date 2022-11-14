@@ -28,6 +28,8 @@ import { ScrollTrigger } from 'gsap/scrollTrigger';
 import bgimg from '../assets/images/treasure_close.png'
 import bgimg2 from '../assets/images/treasure_halfopen.png'
 import bgimg3 from '../assets/images/treasure_open.png'
+import progress_4 from '../assets/img/progress_4.png';
+
 
 export default {
     data() {},
@@ -66,7 +68,7 @@ export default {
         gsap.set('.diamond_red', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_red2', { opacity: 0, visibility: "hidden" });
         gsap.set('.diamond_green', { opacity: 0, visibility: "hidden" });
-        tl.to('.treasure_all', 1, {backgroundImage:require('../assets/images/treasure_close.png')
+        tl.to('.treasure_all', 1, {backgroundImage:progress_4
         })
     }
 
@@ -157,9 +159,9 @@ export default {
             }
         });
 
-        tl.to('.treasure_all', 1, {backgroundImage:require('../assets/images/treasure_close.png')
-        }).to('.treasure_all', 1.2, {backgroundImage:require('../assets/images/treasure_halfopen.png')
-        }).to('.treasure_all', 1.5, {backgroundImage:require('../assets/images/treasure_open.png')}) 
+        tl.to('.treasure_all', 1, {backgroundImage:progress_4
+        }).to('.treasure_all', 1.2, {backgroundImage:progress_4
+        }).to('.treasure_all', 1.5, {backgroundImage:progress_4}) 
       }
 
       
