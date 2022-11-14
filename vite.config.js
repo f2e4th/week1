@@ -6,5 +6,4 @@ import path from 'path'
 export default defineConfig({
   base:'./week1/dist/',
   plugins: [vue()],
-  assetsRoot: path.resolve(__dirname, './dist')
 })
